@@ -1,0 +1,49 @@
+{
+    "linkedin.com": {
+        "company": {
+            "selector": ".pv-text-details__right-panel li:nth-of-type(1) button span div",
+            "transform": "innerText"
+        },
+        "container": {
+            "selector": ".ph5.pb5"
+        },
+        "full_name": {
+            "selector": "h1.inline.t-24.v-align-middle.break-words",
+            "transform": "innerText"
+        },
+        "idUser": {
+            "selector": "[data-member-id]",
+            "transform": "data-member-id"
+        },
+        "location": {
+            "selector": ".mt2.relative div:nth-of-type(2) span",
+            "transform": "innerText"
+        },
+        "pic_url": {
+            "selector": "img",
+            "transform": "src"
+        },
+        "titles": {
+            "selector": ".text-body-medium.break-words",
+            "transform": "innerText"
+        },
+        "university": {
+            "selector": ".pv-text-details__right-panel li:nth-of-type(2) button span div",
+            "transform": "innerText"
+        }
+    },
+    "mail.google.com": {
+        "dom": {
+            "selector": ".hx .gE"
+        },
+        "email": {
+            "selector": ".gD",
+            "transform": "email"
+        },
+        "nameprofile": {
+            "selector": ".gD",
+            "transform": "innerText"
+        }
+    },
+    "version": "1.0.0"
+}
