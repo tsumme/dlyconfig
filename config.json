@@ -1,8 +1,8 @@
 {
     "linkedin.com": {
         "company": {
-            "selector": ".pv-text-details__right-panel li:nth-of-type(1) button span div",
-            "transform": "innerText"
+         "selector": ".top-card-background-hero-image + div ul li:nth-of-type(1) button span div",
+         "transform": "innerText"
         },
         "container": {
             "selector": ".ph5.pb5"
@@ -28,7 +28,7 @@
             "transform": "innerText"
         },
         "university": {
-            "selector": ".pv-text-details__right-panel li:nth-of-type(2) button span div",
+            "selector": ".top-card-background-hero-image + div ul li:nth-of-type(2) button span div",
             "transform": "innerText"
         }
     },
