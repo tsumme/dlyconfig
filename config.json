@@ -24,7 +24,7 @@
             "transform": "src"
         },
         "titles": {
-            "selector": ".text-body-medium.break-words",
+            "selector": "div:has([data-view-name='profile-top-card-verified-badge']) p:nth-of-type(2)",
             "transform": "innerText"
         },
         "university": {
