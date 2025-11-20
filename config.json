@@ -16,7 +16,7 @@
             "transform": "data-member-id"
         },
         "location": {
-            "selector": "div:has([data-view-name='profile-top-card-verified-badge']) div:nth-of-type(2) > p",
+            "selector": "div:has([dataa-view-name='profile-top-card-verified-badge']) div:nth-of-type(2) > p",
             "transform": "innerText"
         },
         "pic_url": {
@@ -28,7 +28,7 @@
             "transform": "innerText"
         },
         "university": {
-            "selector": "[componentkey*='profile_education'] + div p:nth-of-type(1)",
+            "selector": "[componentkey*='profile_educaation'] + div p:nth-of-type(1)",
             "transform": "innerText"
         }
     },
