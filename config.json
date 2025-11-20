@@ -1,14 +1,14 @@
 {
     "linkedin.com": {
         "company": {
-         "selector": "[data-view-name='profile-top-card-verified-badge'] p",
+         "selector": ".top-card-background-hero-image + div ul li:nth-of-type(1) button span div",
          "transform": "innerText"
         },
         "container": {
             "selector": ".ph5.pb5"
         },
         "full_name": {
-            "selector": "h1.inline.t-24.v-align-middle.break-words",
+            "selector": "[data-view-name='profile-top-card-verified-badge'] p",
             "transform": "innerText"
         },
         "idUser": {
