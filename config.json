@@ -28,7 +28,7 @@
             "transform": "innerText"
         },
         "university": {
-            "selector": "[data-view-name='profile-card'] ul li a div span[aria-hidden] , [componentkey*='profile_education'] + div p:nth-of-type(1)",
+            "selector": "div[id='education'] + div + div ul li a div span[aria-hidden] , [data-view-name='profile-card'] ul li a div span[aria-hidden] , [componentkey*='profile_education'] + div p:nth-of-type(1)",
             "transform": "innerText"
         }
     },
