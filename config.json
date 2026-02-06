@@ -13,7 +13,7 @@
             "selector": ".ph5.pb5 , [aria-label='Profile photo']"
         },
         "full_name": {
-            "selector": "h1.inline.t-24.v-align-middle.break-words, [data-view-name='profile-top-card-verified-badge'] p",
+            "selector": "h1.inline.t-24.v-align-middle.break-words, [data-view-name='profile-top-card-verified-badge'] p , [data-view-name='profile-top-card-verified-badge'] h2",
             "transform": "innerText"
         },
         "idUser": {
