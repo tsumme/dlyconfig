@@ -33,7 +33,7 @@
             "transform": "innerText"
         },
         "university": {
-            "selector": "[data-view-name='profile-card-education'] [componentkey^='entity-collection-item'] p:nth-of-type(1)",
+            "selector": "[data-view-name='profile-card-education'] p:nth-of-type(1)",
             "transform": "innerText"
         }
     },
@@ -50,5 +50,5 @@
             "transform": "innerText"
         }
     },
-    "version": "1.0.0"
+    "version": "1.0.1"
 }
