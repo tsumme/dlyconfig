@@ -33,7 +33,7 @@
             "transform": "innerText"
         },
         "university": {
-            "selector": "div[id='education'] + div + div ul li a div span[aria-hidden] ,div[id='education'] + [data-view-name='profile-card'] ul li a div span[aria-hidden] , [componentkey*='profile_education'] + div p:nth-of-type(1)",
+            "selector": "[data-view-name='profile-card-education'] [componentkey^='entity-collection-item'] p:nth-of-type(1)",
             "transform": "innerText"
         }
     },
