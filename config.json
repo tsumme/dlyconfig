@@ -39,7 +39,7 @@
     },
     "mail.google.com": {
         "dom": {
-            "selector": ".hx .gE"
+            "selector": ".iw .gE"
         },
         "email": {
             "selector": ".gD",
