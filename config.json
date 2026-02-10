@@ -50,5 +50,15 @@
             "transform": "innerText"
         }
     },
+    "facebook.com":{
+        "full_name": {
+            "selector": "h1",
+            "transform": "innerText"
+        },
+         "pic_url": {
+            "selector": "a svg g image",
+            "transform": "xlink:href"
+        }
+    },
     "version": "1.0.1"
 }
