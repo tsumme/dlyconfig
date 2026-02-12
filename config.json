@@ -69,6 +69,6 @@
             "selector": "a[href$='/photo'] img",
             "transform": "src"
         }
-    }
+    },
     "version": "1.0.1"
 }
