@@ -60,5 +60,15 @@
             "transform": "xlink:href"
         }
     },
+    "twitter.com":{
+        "full_name": {
+            "selector": "[data-testid='UserName'] span",
+            "transform": "innerText"
+        },
+         "pic_url": {
+            "selector": "a[href$='/photo'] img",
+            "transform": "src"
+        }
+    }
     "version": "1.0.1"
 }
