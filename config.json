@@ -1,12 +1,12 @@
 {
     "linkedin.com": {
         "company": {
-         "selector": "#experience + div + div ul li:nth-of-type(1) a span span[aria-hidden] ,[componentkey*='profile_experience'] + div div[componentkey^='entity-collection-item'] p:nth-of-type(2)",
+         "selector": "#experience + div + div ul li:nth-of-type(1) a span span[aria-hidden] , div:has(> div [data-view-name='profile-top-card-verified-badge']):has(> p + p + div) > p:nth-of-type(2) , [data-testid*='ExperienceTopLevelSection'] p:first-of-type",
          "transform": "innerText"
         },
         "multipleCompany":{
-            "selectorSpan": "#experience + div + div ul li:nth-of-type(1) ul li > span",
-            "selector":"#experience + div + div ul li:nth-of-type(1) div:nth-of-type(2) a div span",
+            "selectorSpan": "#experience + div + div ul li:nth-of-type(1) ul li > span , [data-testid*='ExperienceTopLevelSection'] ul li > span",
+            "selector":"#experience + div + div ul li:nth-of-type(1) div:nth-of-type(2) a div span , [data-testid*='ExperienceTopLevelSection'] li:first-of-type div:nth-of-type(2) a div span",
             "transform": "innerText"
         },
         "container": {
@@ -21,7 +21,7 @@
             "transform": "data-member-id"
         },
         "location": {
-            "selector": ".mt2.relative div:nth-of-type(2) span , div:has([data-view-name='profile-top-card-verified-badge']) div:nth-of-type(2) > p",
+            "selector": ".mt2.relative div:nth-of-type(2) span , div:has(> div [data-view-name='profile-top-card-verified-badge']):has(> p + p + div) > div:last-of-type > p:first-child",
             "transform": "innerText"
         },
         "pic_url": {
@@ -29,11 +29,11 @@
             "transform": "src"
         },
         "titles": {
-            "selector": ".text-body-medium.break-words , div:has([data-view-name='profile-top-card-verified-badge']) p:nth-of-type(2)",
+            "selector": ".text-body-medium.break-words , div:has(> div [data-view-name='profile-top-card-verified-badge']):has(> p + p + div) > p:first-of-type",
             "transform": "innerText"
         },
         "university": {
-            "selector": "[data-view-name='profile-card-education'] p:nth-of-type(1)",
+            "selector": "[data-view-name='profile-card-education'] p:nth-of-type(1) , [data-testid*='EducationTopLevelSection'] p:first-of-type",
             "transform": "innerText"
         }
     },
@@ -70,5 +70,5 @@
             "transform": "src"
         }
     },
-    "version": "1.0.1"
+    "version": "1.0.2"
 }
