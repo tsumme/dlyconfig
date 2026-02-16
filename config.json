@@ -70,5 +70,22 @@
             "transform": "src"
         }
     },
-    "version": "1.0.2"
+    "linkedin-search": {
+        "searchResult": {
+            "selector": "[data-view-name=\"people-search-result\"]"
+        },
+        "nameLink": {
+            "selector": "a[data-view-name=\"search-result-lockup-title\"][href*=\"/in/\"]"
+        },
+        "detailedLink": {
+            "selector": "a[href*=\"/in/\"]:not([data-view-name=\"search-result-lockup-title\"]):not([data-view-name=\"search-result-social-proof-insight\"])"
+        },
+        "paragraphs": {
+            "selector": "p"
+        },
+        "companyStrong": {
+            "selector": "strong"
+        }
+    },
+    "version": "1.0.3"
 }
