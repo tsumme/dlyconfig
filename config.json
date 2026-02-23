@@ -37,6 +37,19 @@
             "transform": "innerText"
         }
     },
+    "linkedin-search": {
+        "searchResult": "[data-view-name=\"people-search-result\"]",
+        "nameLink": "a[data-view-name=\"search-result-lockup-title\"][href*=\"/in/\"]",
+        "detailedLink": "a[href*=\"/in/\"]:not([data-view-name=\"search-result-lockup-title\"]):not([data-view-name=\"search-result-social-proof-insight\"])",
+        "paragraphs": "p",
+        "companyStrong": "strong"
+    },
+    "bing-linkedin-search": {
+        "cardIndicator": "s_appgobig",
+        "contextCharsBeforeCite": 1500,
+        "contextCharsAfterCite": 600,
+        "maxResults": 5
+    },
     "mail.google.com": {
         "dom": {
             "selector": ".gE .iw"
@@ -70,5 +83,5 @@
             "transform": "src"
         }
     },
-    "version": "1.0.2"
+    "version": "1.0.3"
 }
