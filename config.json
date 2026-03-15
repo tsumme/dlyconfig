@@ -54,10 +54,7 @@
     "dom": {
       "selector": ".gE .iw"
     },
-    "email": {
-      "selector": ".gD",
-      "transform": "email"
-    },
+    "email": "span[email]",
     "nameprofile": {
       "selector": ".gD",
       "transform": "innerText"
