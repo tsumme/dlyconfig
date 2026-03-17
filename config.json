@@ -1,39 +1,39 @@
 {
   "linkedin.com": {
-    "company": {
-      "selector": "div[role='button']:has(svg[id*='company']) p, section[componentkey*='Topcard'] a[href*='/company/'] p, div[componentkey*='entity']:first-child:has(ul) a[href*='/company/']:has(svg[id*='company']) + div p:first-of-type, div[componentkey*='entity']:first-child:has(ul) figure:has(svg[id*='company']) + div p:first-of-type, div[componentkey*='entity']:first-child:not(:has(ul)) a[href*='/company/']:has(svg[id*='company']) + div p:nth-of-type(2), div[componentkey*='entity']:first-child:not(:has(ul)) figure:has(svg[id*='company']) + div p:nth-of-type(2), a[href*='/company/'] p:first-of-type",
-      "transform": "innerText"
-    },
-    "multipleCompany": {
-      "selectorSpan": "#experience + div + div ul li:nth-of-type(1) ul li > span, [data-testid*='ExperienceTopLevelSection'] ul li > span",
-      "selector": "a[href*='/company/'] p:first-of-type, li a[href*='/company/'] p",
-      "transform": "innerText"
-    },
     "container": {
-      "selector": "main.scaffold-layout__main, section.artdeco-card, .ph5.pb5, [aria-label='Profile photo'], #root"
+      "selector": "main.scaffold-layout__main, main, #root"
     },
     "full_name": {
-      "selector": "section[componentkey*='Topcard'] h2, h1.text-heading-xlarge, [class*='text-heading-xlarge'], h1",
-      "transform": "innerText"
-    },
-    "idUser": {
-      "selector": "[data-member-id]",
-      "transform": "data-member-id"
-    },
-    "location": {
-      "selector": "main div:has(a[href*='contact-info']) p:first-of-type, main [data-view-name='profile-top-card-location']",
+      "selector": "main h1",
       "transform": "innerText"
     },
     "pic_url": {
       "selector": "main div[aria-label='Profile photo'] img, main .pv-top-card-profile-picture__image--show, [data-testid='profile-photo'] img",
       "transform": "src"
     },
+    "location": {
+      "selector": "main div:has(a[href*='contact-info']) p:first-of-type, main [data-view-name='profile-top-card-location']",
+      "transform": "innerText"
+    },
     "titles": {
-      "selector": "div:has(> div[aria-haspopup='dialog']) + p, .text-body-medium.break-words, [class*='text-body-medium']",
+      "selector": "main .text-body-medium.break-words, main div:has(> div[aria-haspopup='dialog']) + p",
+      "transform": "innerText"
+    },
+    "company": {
+      "selector": "main div[role='button']:has(svg[id*='company']) p, main section[componentkey*='Topcard'] a[href*='/company/'] p",
       "transform": "innerText"
     },
     "university": {
-      "selector": "div[role='button']:has(svg[id*='school']) p, section[componentkey*='Topcard'] a[href*='/school/'] p, a[href*='/school/']:has(svg[id*='school']) + div a[href*='/school/'] p:first-of-type, a[href*='/school/']:has(img[alt*='logo']) + div a[href*='/school/'] p:first-of-type, [data-view-name='profile-card-education'] p:first-of-type, [data-testid*='EducationTopLevelSection'] p:first-of-type",
+      "selector": "main div[role='button']:has(svg[id*='school']) p, main section[componentkey*='Topcard'] a[href*='/school/'] p",
+      "transform": "innerText"
+    },
+    "idUser": {
+      "selector": "main [data-member-id], [data-member-id]",
+      "transform": "data-member-id"
+    },
+    "multipleCompany": {
+      "selectorSpan": "main [data-testid*='ExperienceTopLevelSection'] ul li > span, main #experience + div + div ul li:nth-of-type(1) ul li > span",
+      "selector": "main a[href*='/company/'] p:first-of-type, main li a[href*='/company/'] p",
       "transform": "innerText"
     }
   },
@@ -83,7 +83,7 @@
       "transform": "src"
     }
   },
-  "version": "1.0.11",
+  "version": "1.1.0",
   "x.com": {
     "full_name": "div[data-testid='User-Name'] > div > div > a > div > div > span > span"
   }
