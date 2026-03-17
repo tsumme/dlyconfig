@@ -91,6 +91,10 @@
     "company": {
       "selector": "a[href*='/company/']",
       "transform": "textContent"
+    },
+    "titles": {
+      "selector": "section[componentkey*='ExperienceTopLevelSection'] div[componentkey^='entity-collection-item-'] a[href*='/company/'] div > div > div > p:first-of-type",
+      "transform": "textContent"
     }
   }
 }
