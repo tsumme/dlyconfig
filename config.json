@@ -86,11 +86,5 @@
   "version": "1.0.4",
   "x.com": {
     "full_name": "div[data-testid='User-Name'] > div > div > a > div > div > span > span"
-  },
-  "www.linkedin.com": {
-    "titles": {
-      "selector": "section[componentkey='com.linkedin.sdui.profile.card.refkevinsystromExperienceTopLevelSection'] div[componentkey^='entity-collection-item-'] a[href^='https://www.linkedin.com/company/'] div > div > div > p:first-child",
-      "transform": "textContent"
-    }
   }
 }
