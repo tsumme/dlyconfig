@@ -21,13 +21,13 @@
       "transform": "data-member-id"
     },
     "location": {
-      "selector": "main .pv-text-details__left-panel > span.text-body-small:not(.break-words), [data-view-name='profile-top-card-location'] span:first-child",
-      "transform": "innerText"
-    },
-    "pic_url": {
-      "selector": "main div[aria-label='Profile photo'] img, main .pv-top-card-profile-picture__image--show, [data-testid='profile-photo'] img",
-      "transform": "src"
-    },
+  "selector": "main div:has(> p > a[href*='contact-info']) > p:first-of-type, main .pv-text-details__left-panel > div:last-child > p:first-of-type, [data-view-name='profile-top-card-location']",
+  "transform": "innerText"
+},
+"pic_url": {
+  "selector": "main div[aria-label='Profile photo'] img, main .pv-top-card-profile-picture__image--show, [data-testid='profile-photo'] img",
+  "transform": "src"
+},
     "titles": {
       "selector": "div:has(> div[aria-haspopup='dialog']) + p, .text-body-medium.break-words, [class*='text-body-medium']",
       "transform": "innerText"
@@ -83,7 +83,7 @@
       "transform": "src"
     }
   },
-  "version": "1.0.8",
+  "version": "1.0.9",
   "x.com": {
     "full_name": "div[data-testid='User-Name'] > div > div > a > div > div > span > span"
   }
