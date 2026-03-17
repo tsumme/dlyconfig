@@ -23,7 +23,7 @@
     "location": {
       "selector": "main div:has(a[href*='contact-info']) p:first-of-type, main [data-view-name='profile-top-card-location']",
       "transform": "innerText"
-    }
+    },
     "pic_url": {
       "selector": "main div[aria-label='Profile photo'] img, main .pv-top-card-profile-picture__image--show, [data-testid='profile-photo'] img",
       "transform": "src"
@@ -83,7 +83,7 @@
       "transform": "src"
     }
   },
-  "version": "1.0.10",
+  "version": "1.0.11",
   "x.com": {
     "full_name": "div[data-testid='User-Name'] > div > div > a > div > div > span > span"
   }
