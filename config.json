@@ -83,7 +83,7 @@
       "transform": "src"
     }
   },
-  "version": "1.0.9",
+  "version": "1.0.10",
   "x.com": {
     "full_name": "div[data-testid='User-Name'] > div > div > a > div > div > span > span"
   }
