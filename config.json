@@ -25,7 +25,7 @@
       "transform": "innerText"
     },
     "pic_url": {
-      "selector": "img[src*='profile-displayphoto'], img[src*='profile-framedphoto'], img.pv-top-card-profile-picture__image--show",
+      "selector": "[aria-label='Profile photo'] img, img[src*='profile-displayphoto'], img[src*='profile-framedphoto'], img.pv-top-card-profile-picture__image--show",
       "transform": "src"
     },
     "titles": {
@@ -83,7 +83,7 @@
       "transform": "src"
     }
   },
-  "version": "1.0.6",
+  "version": "1.0.7",
   "x.com": {
     "full_name": "div[data-testid='User-Name'] > div > div > a > div > div > span > span"
   }
