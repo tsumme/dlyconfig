@@ -1,19 +1,19 @@
 {
   "linkedin.com": {
     "company": {
-      "selector": "#experience + div + div ul li:nth-of-type(1) a span span[aria-hidden] , div:has(> div [data-view-name='profile-top-card-verified-badge']):has(> p + p + div) > p:nth-of-type(2) , [data-testid*='ExperienceTopLevelSection'] p:first-of-type",
+      "selector": "section[componentkey*='Topcard'] button[aria-label*='Current company'], section[componentkey*='Topcard'] a[href*='/company/'], div[componentkey*='entity']:first-child:has(ul) a[href*='/company/']:has(svg[id*='company']) + div p:first-of-type, div[componentkey*='entity']:first-child:has(ul) figure:has(svg[id*='company']) + div p:first-of-type, div[componentkey*='entity']:first-child:not(:has(ul)) a[href*='/company/']:has(svg[id*='company']) + div p:nth-of-type(2), div[componentkey*='entity']:first-child:not(:has(ul)) figure:has(svg[id*='company']) + div p:nth-of-type(2), a[href*='/company/'] p:first-of-type",
       "transform": "innerText"
     },
     "multipleCompany": {
-      "selectorSpan": "#experience + div + div ul li:nth-of-type(1) ul li > span , [data-testid*='ExperienceTopLevelSection'] ul li > span",
-      "selector": "#experience + div + div ul li:nth-of-type(1) div:nth-of-type(2) a div span , [data-testid*='ExperienceTopLevelSection'] li:first-of-type div:nth-of-type(2) a div span",
+      "selectorSpan": "#experience + div + div ul li:nth-of-type(1) ul li > span, [data-testid*='ExperienceTopLevelSection'] ul li > span",
+      "selector": "a[href*='/company/'] p:first-of-type, li a[href*='/company/'] p",
       "transform": "innerText"
     },
     "container": {
-      "selector": ".ph5.pb5 , [aria-label='Profile photo']"
+      "selector": "main.scaffold-layout__main, section.artdeco-card, .ph5.pb5, [aria-label='Profile photo'], #root"
     },
     "full_name": {
-      "selector": "section[componentkey*='Topcard'] h2, h1.text-heading-xlarge, h1.inline.t-24.v-align-middle.break-words, [data-view-name='profile-top-card-verified-badge'] p , [data-view-name='profile-top-card-verified-badge'] h2",
+      "selector": "section[componentkey*='Topcard'] h2, h1.text-heading-xlarge, [class*='text-heading-xlarge'], h1, [data-view-name='profile-top-card-verified-badge'] p, [data-view-name='profile-top-card-verified-badge'] h2",
       "transform": "innerText"
     },
     "idUser": {
@@ -21,19 +21,19 @@
       "transform": "data-member-id"
     },
     "location": {
-      "selector": "div:has(> p > a[href*='/contact-info/']) > p:first-child, span.text-body-small.inline.t-black--light.break-words, .pb2 .text-body-small.inline.t-black--light, .mt2.relative div:nth-of-type(2) span , div:has(> div [data-view-name='profile-top-card-verified-badge']):has(> p + p + div) > div:last-of-type > p:first-child",
+      "selector": "div:has(> p > a[href*='contact-info']) > p:first-of-type, div:has(p > a[href*='contact-info']) > p:first-of-type, span.text-body-small.inline.t-black--light.break-words",
       "transform": "innerText"
     },
     "pic_url": {
-      "selector": "img",
+      "selector": "img[src*='profile-displayphoto'], img[src*='profile-framedphoto'], img.pv-top-card-profile-picture__image--show",
       "transform": "src"
     },
     "titles": {
-      "selector": "div:has(> div[aria-haspopup='dialog']) + p, .text-body-medium.break-words , div:has(> div [data-view-name='profile-top-card-verified-badge']):has(> p + p + div) > p:first-of-type",
+      "selector": "div:has(> div[aria-haspopup='dialog']) + p, .text-body-medium.break-words, [class*='text-body-medium']",
       "transform": "innerText"
     },
     "university": {
-      "selector": "[data-view-name='profile-card-education'] p:nth-of-type(1) , [data-testid*='EducationTopLevelSection'] p:first-of-type",
+      "selector": "section[componentkey*='Topcard'] button[aria-label*='Education'], section[componentkey*='Topcard'] a[href*='/school/'], a[href*='/school/']:has(svg[id*='school']) + div a[href*='/school/'] p:first-of-type, a[href*='/school/']:has(img[alt*='logo']) + div a[href*='/school/'] p:first-of-type, [data-view-name='profile-card-education'] p:first-of-type, [data-testid*='EducationTopLevelSection'] p:first-of-type",
       "transform": "innerText"
     }
   },
@@ -83,7 +83,7 @@
       "transform": "src"
     }
   },
-  "version": "1.0.4",
+  "version": "1.0.6",
   "x.com": {
     "full_name": "div[data-testid='User-Name'] > div > div > a > div > div > span > span"
   }
