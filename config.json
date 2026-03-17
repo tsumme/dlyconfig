@@ -1,40 +1,35 @@
 {
   "linkedin.com": {
-    "company": {
-      "selector": "[componentkey*='ExperienceTopLevelSection'] section div div div div a[href*='/company/'] + div a > div > div > div > p:nth-of-type(2)",
-      "transform": "innerText"
-    },
-    "multipleCompany": {
-      "selectorSpan": "#experience + div + div ul li:nth-of-type(1) ul li > span , [data-testid*='ExperienceTopLevelSection'] ul li > span",
-      "selector": "#experience + div + div ul li:nth-of-type(1) div:nth-of-type(2) a div span , [data-testid*='ExperienceTopLevelSection'] li:first-of-type div:nth-of-type(2) a div span",
-      "transform": "innerText"
-    },
-    "container": {
-      "selector": ".ph5.pb5 , [aria-label='Profile photo']"
-    },
     "full_name": {
-      "selector": "section[componentkey*='Topcard'] h2, h1.text-heading-xlarge, h1.inline.t-24.v-align-middle.break-words, [data-view-name='profile-top-card-verified-badge'] p , [data-view-name='profile-top-card-verified-badge'] h2",
+      "selector": "h1.text-heading-xlarge, [class*='text-heading-xlarge'], .pv-text-details__left-panel div:first-child, h1",
       "transform": "innerText"
+    },
+    "titles": {
+      "selector": ".text-body-medium.break-words, [class*='text-body-medium'], [data-test-id='headline'], main section div.mt2 > div",
+      "transform": "innerText"
+    },
+    "company": {
+      "selector": "a[href*='/company/']:not([href*='followers']) span[aria-hidden='true'], a[href*='/company/']:not([href*='followers'])",
+      "transform": "innerText"
+    },
+    "university": {
+      "selector": "a[href*='/school/']:not([href*='mentor']):not([href*='advising']) span[aria-hidden='true'], a[href*='/school/']:not([href*='mentor']):not([href*='advising'])",
+      "transform": "innerText"
+    },
+    "location": {
+      "selector": "span.text-body-small.inline.t-black--light.break-words, [class*='text-body-small'][class*='break-words'], div:has(> a[href*='contact-info']) span:first-child",
+      "transform": "innerText"
+    },
+    "pic_url": {
+      "selector": "img.pv-top-card-profile-picture__image--show, [class*='profile-displayphoto'], img[alt*='profile picture']",
+      "transform": "src"
     },
     "idUser": {
       "selector": "[data-member-id]",
       "transform": "data-member-id"
     },
-    "location": {
-      "selector": "div:has(> p > a[href*='/contact-info/']) > p:first-child, span.text-body-small.inline.t-black--light.break-words, .pb2 .text-body-small.inline.t-black--light, .mt2.relative div:nth-of-type(2) span , div:has(> div [data-view-name='profile-top-card-verified-badge']):has(> p + p + div) > div:last-of-type > p:first-child",
-      "transform": "innerText"
-    },
-    "pic_url": {
-      "selector": "img",
-      "transform": "src"
-    },
-    "titles": {
-      "selector": "div:has(> div[aria-haspopup='dialog']) + p, .text-body-medium.break-words , div:has(> div [data-view-name='profile-top-card-verified-badge']):has(> p + p + div) > p:first-of-type",
-      "transform": "innerText"
-    },
-    "university": {
-      "selector": "[data-view-name='profile-card-education'] p:nth-of-type(1) , [data-testid*='EducationTopLevelSection'] p:first-of-type",
-      "transform": "innerText"
+    "container": {
+      "selector": "main.scaffold-layout__main, section.artdeco-card, #root"
     }
   },
   "linkedin-search": {
@@ -51,40 +46,20 @@
     "maxResults": 5
   },
   "mail.google.com": {
-    "dom": {
-      "selector": ".gE .iw"
-    },
-    "email": {
-      "selector": "span[email]",
-      "transform": "email"
-    },
-    "nameprofile": {
-      "selector": ".gD",
-      "transform": "innerText"
-    }
+    "dom": { "selector": ".gE .iw" },
+    "email": { "selector": "span[email]", "transform": "email" },
+    "nameprofile": { "selector": ".gD", "transform": "innerText" }
   },
   "facebook.com": {
-    "full_name": {
-      "selector": "h1",
-      "transform": "innerText"
-    },
-    "pic_url": {
-      "selector": "a svg g image",
-      "transform": "xlink:href"
-    }
+    "full_name": { "selector": "h1", "transform": "innerText" },
+    "pic_url": { "selector": "a svg g image", "transform": "xlink:href" }
   },
   "twitter.com": {
-    "full_name": {
-      "selector": "[data-testid='UserName'] span",
-      "transform": "innerText"
-    },
-    "pic_url": {
-      "selector": "a[href$='/photo'] img",
-      "transform": "src"
-    }
+    "full_name": { "selector": "[data-testid='UserName'] span", "transform": "innerText" },
+    "pic_url": { "selector": "a[href$='/photo'] img", "transform": "src" }
   },
-  "version": "1.0.4",
   "x.com": {
     "full_name": "div[data-testid='User-Name'] > div > div > a > div > div > span > span"
-  }
+  },
+  "version": "1.0.5"
 }
