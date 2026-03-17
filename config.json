@@ -1,7 +1,7 @@
 {
   "linkedin.com": {
     "company": {
-      "selector": "#experience + div + div ul li:nth-of-type(1) a span span[aria-hidden] , div:has(> div [data-view-name='profile-top-card-verified-badge']):has(> p + p + div) > p:nth-of-type(2) , [data-testid*='ExperienceTopLevelSection'] p:first-of-type",
+      "selector": "[componentkey*='ExperienceTopLevelSection'] section div div div div a[href*='/company/'] + div a > div > div > div > p:nth-of-type(2)",
       "transform": "innerText"
     },
     "multipleCompany": {
