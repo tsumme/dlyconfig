@@ -12,7 +12,7 @@
       "transform": "src"
     },
     "location": {
-      "selector": "main div:has(a[href*='contact-info']) p:first-of-type, main [data-view-name='profile-top-card-location']",
+      "selector": "main div:has(> p > a[href*='contact-info']) > p:first-of-type, main p:has(~ p > a[href*='contact-info']), main [data-view-name='profile-top-card-location']",
       "transform": "innerText"
     },
     "titles": {
