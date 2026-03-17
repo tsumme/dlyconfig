@@ -88,6 +88,9 @@
     "full_name": "div[data-testid='User-Name'] > div > div > a > div > div > span > span"
   },
   "www.linkedin.com": {
-    "company": "a[href*='/company/']"
+    "company": {
+      "selector": "a[href*='/company/']",
+      "transform": "textContent"
+    }
   }
 }
