@@ -21,11 +21,11 @@
       "transform": "data-member-id"
     },
     "location": {
-      "selector": "div:has(> p > a[href*='contact-info']) > p:first-of-type, div:has(p > a[href*='contact-info']) > p:first-of-type, span.text-body-small.inline.t-black--light.break-words",
+      "selector": "main .pv-text-details__left-panel > span.text-body-small:not(.break-words), [data-view-name='profile-top-card-location'] span:first-child",
       "transform": "innerText"
     },
     "pic_url": {
-      "selector": "[aria-label='Profile photo'] img, img[src*='profile-displayphoto'], img[src*='profile-framedphoto'], img.pv-top-card-profile-picture__image--show",
+      "selector": "main div[aria-label='Profile photo'] img, main .pv-top-card-profile-picture__image--show, [data-testid='profile-photo'] img",
       "transform": "src"
     },
     "titles": {
