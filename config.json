@@ -4,7 +4,7 @@
       "selector": "main.scaffold-layout__main, main, #root"
     },
     "full_name": {
-      "selector": "main h1",
+      "selector": "main h1, main section:first-of-type h2:first-of-type, main h2:first-of-type",
       "transform": "innerText"
     },
     "pic_url": {
