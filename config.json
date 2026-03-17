@@ -1,7 +1,7 @@
 {
   "linkedin.com": {
     "company": {
-      "selector": "section[componentkey*='Topcard'] button[aria-label*='Current company'], section[componentkey*='Topcard'] a[href*='/company/'], div[componentkey*='entity']:first-child:has(ul) a[href*='/company/']:has(svg[id*='company']) + div p:first-of-type, div[componentkey*='entity']:first-child:has(ul) figure:has(svg[id*='company']) + div p:first-of-type, div[componentkey*='entity']:first-child:not(:has(ul)) a[href*='/company/']:has(svg[id*='company']) + div p:nth-of-type(2), div[componentkey*='entity']:first-child:not(:has(ul)) figure:has(svg[id*='company']) + div p:nth-of-type(2), a[href*='/company/'] p:first-of-type",
+      "selector": "div[role='button']:has(svg[id*='company']) p, section[componentkey*='Topcard'] a[href*='/company/'] p, div[componentkey*='entity']:first-child:has(ul) a[href*='/company/']:has(svg[id*='company']) + div p:first-of-type, div[componentkey*='entity']:first-child:has(ul) figure:has(svg[id*='company']) + div p:first-of-type, div[componentkey*='entity']:first-child:not(:has(ul)) a[href*='/company/']:has(svg[id*='company']) + div p:nth-of-type(2), div[componentkey*='entity']:first-child:not(:has(ul)) figure:has(svg[id*='company']) + div p:nth-of-type(2), a[href*='/company/'] p:first-of-type",
       "transform": "innerText"
     },
     "multipleCompany": {
@@ -13,7 +13,7 @@
       "selector": "main.scaffold-layout__main, section.artdeco-card, .ph5.pb5, [aria-label='Profile photo'], #root"
     },
     "full_name": {
-      "selector": "section[componentkey*='Topcard'] h2, h1.text-heading-xlarge, [class*='text-heading-xlarge'], h1, [data-view-name='profile-top-card-verified-badge'] p, [data-view-name='profile-top-card-verified-badge'] h2",
+      "selector": "section[componentkey*='Topcard'] h2, h1.text-heading-xlarge, [class*='text-heading-xlarge'], h1",
       "transform": "innerText"
     },
     "idUser": {
@@ -33,7 +33,7 @@
       "transform": "innerText"
     },
     "university": {
-      "selector": "section[componentkey*='Topcard'] button[aria-label*='Education'], section[componentkey*='Topcard'] a[href*='/school/'], a[href*='/school/']:has(svg[id*='school']) + div a[href*='/school/'] p:first-of-type, a[href*='/school/']:has(img[alt*='logo']) + div a[href*='/school/'] p:first-of-type, [data-view-name='profile-card-education'] p:first-of-type, [data-testid*='EducationTopLevelSection'] p:first-of-type",
+      "selector": "div[role='button']:has(svg[id*='school']) p, section[componentkey*='Topcard'] a[href*='/school/'] p, a[href*='/school/']:has(svg[id*='school']) + div a[href*='/school/'] p:first-of-type, a[href*='/school/']:has(img[alt*='logo']) + div a[href*='/school/'] p:first-of-type, [data-view-name='profile-card-education'] p:first-of-type, [data-testid*='EducationTopLevelSection'] p:first-of-type",
       "transform": "innerText"
     }
   },
