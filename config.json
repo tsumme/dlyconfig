@@ -70,9 +70,29 @@
     },
     "pic_url": {
       "selector": "a svg g image",
-      "transform": "xlink:href"
+      "transform": "xlink:href",
+      "fallbacks": [
+        { "selector": "svg[aria-label] g image", "transform": "xlink:href" },
+        { "selector": "svg[aria-label] g image", "transform": "href" },
+        { "selector": "a[aria-label] svg g image", "transform": "xlink:href" },
+        { "selector": "a[aria-label] svg g image", "transform": "href" },
+        { "selector": "a svg g image", "transform": "xlink:href" },
+        { "selector": "a svg g image", "transform": "href" }
+      ]
+    },
+    "company": {
+      "sectionTitle": "Work",
+      "containerSelector": "h2",
+      "listItemSelector": "[role='listitem']",
+      "textSelector": "span[dir='auto']"
+    },
+    "university": {
+      "sectionTitle": "Education",
+      "containerSelector": "h2",
+      "listItemSelector": "[role='listitem']",
+      "textSelector": "span[dir='auto']"
     }
-  },
+  }
   "twitter.com": {
     "full_name": {
       "selector": "[data-testid='UserName'] span",
@@ -83,7 +103,7 @@
       "transform": "src"
     }
   },
-  "version": "1.1.1",
+  "version": "1.1.2",
   "x.com": {
     "full_name": "div[data-testid='User-Name'] > div > div > a > div > div > span > span"
   }
