@@ -1,4 +1,5 @@
 {
+  "version": "1.1.3",
   "linkedin.com": {
     "container": {
       "selector": "main.scaffold-layout__main, main, #root"
@@ -115,8 +116,10 @@
       "transform": "src"
     }
   },
-  "version": "1.1.3",
   "x.com": {
-    "full_name": "div[data-testid='User-Name'] > div > div > a > div > div > span > span"
+    "full_name": {
+      "selector": "div[data-testid='User-Name'] > div > div > a > div > div > span > span",
+      "transform": "innerText"
+    }
   }
 }
