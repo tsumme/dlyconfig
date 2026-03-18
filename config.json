@@ -4,36 +4,48 @@
       "selector": "main.scaffold-layout__main, main, #root"
     },
     "full_name": {
-      "selector": "main section:has(a[href*='contact-info']) h1, main section:has(a[href*='contact-info']) h2, main h1",
+      "selector": "section:has(a[href*='contact-info']) h1, section:has(a[href*='contact-info']) h2, h1",
       "transform": "innerText"
     },
     "pic_url": {
-      "selector": "main div[aria-label='Profile photo'] img, main .pv-top-card-profile-picture__image--show, [data-testid='profile-photo'] img",
+      "selector": "div[aria-label='Profile photo'] img, .pv-top-card-profile-picture__image--show, [data-testid='profile-photo'] img",
       "transform": "src"
     },
     "location": {
-      "selector": "main div:has(> p > a[href*='contact-info']) > p:first-of-type, main [data-view-name='profile-top-card-location']",
+      "selector": "div:has(> p > a[href*='contact-info']) > p:first-of-type, [data-view-name='profile-top-card-location']",
       "transform": "innerText"
     },
     "titles": {
-      "selector": "main .text-body-medium.break-words, main div:has(> div[aria-haspopup='dialog']) + p",
+      "selector": ".text-body-medium.break-words, div:has(> div[aria-haspopup='dialog']) + p",
       "transform": "innerText"
     },
     "company": {
-      "selector": "main div[role='button']:has(svg[id*='company']) p, main section[componentkey*='Topcard'] a[href*='/company/'] p",
-      "transform": "innerText"
+      "selector": "div[role='button']:has(svg[id*='company']) p, section[componentkey*='Topcard'] a[href*='/company/'] p",
+      "transform": "innerText",
+      "fallbacks": [
+        "#experience ~ .pvs-list__outer-container .t-14.t-normal span[aria-hidden='true']",
+        ".pv-text-details__right-panel .pv-entity__summary-info .pv-entity__secondary-title",
+        ".experience-section .pv-entity__summary-info .pv-entity__secondary-title",
+        ".pv-top-card--experience-list .pv-entity__secondary-title",
+        ".experience-item .pv-entity__secondary-title"
+      ]
     },
     "university": {
-      "selector": "main div[role='button']:has(svg[id*='school']) p, main section[componentkey*='Topcard'] a[href*='/school/'] p",
-      "transform": "innerText"
+      "selector": "div[role='button']:has(svg[id*='school']) p, section[componentkey*='Topcard'] a[href*='/school/'] p",
+      "transform": "innerText",
+      "fallbacks": [
+        "#education ~ .pvs-list__outer-container .mr1.hoverable-link-text span[aria-hidden='true']",
+        ".education-section .pv-entity__degree-name",
+        ".education-section .pv-entity__school-name"
+      ]
     },
     "idUser": {
-      "selector": "main [data-member-id], [data-member-id]",
+      "selector": "[data-member-id]",
       "transform": "data-member-id"
     },
     "multipleCompany": {
-      "selectorSpan": "main [data-testid*='ExperienceTopLevelSection'] ul li > span, main #experience + div + div ul li:nth-of-type(1) ul li > span",
-      "selector": "main a[href*='/company/'] p:first-of-type, main li a[href*='/company/'] p",
+      "selectorSpan": "[data-testid*='ExperienceTopLevelSection'] ul li > span, #experience + div + div ul li:nth-of-type(1) ul li > span",
+      "selector": "a[href*='/company/'] p:first-of-type, li a[href*='/company/'] p",
       "transform": "innerText"
     }
   },
@@ -92,7 +104,7 @@
       "listItemSelector": "[role='listitem']",
       "textSelector": "span[dir='auto']"
     }
-  }
+  },
   "twitter.com": {
     "full_name": {
       "selector": "[data-testid='UserName'] span",
@@ -103,7 +115,7 @@
       "transform": "src"
     }
   },
-  "version": "1.1.2",
+  "version": "1.1.3",
   "x.com": {
     "full_name": "div[data-testid='User-Name'] > div > div > a > div > div > span > span"
   }
