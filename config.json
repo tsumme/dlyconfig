@@ -1,5 +1,5 @@
 {
-  "version": "1.1.3",
+  "version": "1.1.4",
   "linkedin.com": {
     "container": {
       "selector": "main.scaffold-layout__main, main, #root"
@@ -78,8 +78,12 @@
   },
   "facebook.com": {
     "full_name": {
-      "selector": "h1",
-      "transform": "innerText"
+      "selector": "div[role='main'] h1, span[dir='auto'] h1",
+      "transform": "innerText",
+      "fallbacks": [
+        { "selector": "svg[role='img'][aria-label]", "transform": "aria-label" },
+        { "selector": "h1", "transform": "innerText" }
+      ]
     },
     "pic_url": {
       "selector": "a svg g image",
