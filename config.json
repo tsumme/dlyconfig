@@ -1,5 +1,5 @@
 {
-  "version": "1.1.4",
+  "version": "1.1.5",
   "linkedin.com": {
     "container": {
       "selector": "main.scaffold-layout__main, main, #root"
@@ -58,6 +58,11 @@
     "companyStrong": "strong"
   },
   "bing-linkedin-search": {
+    "citeTag": "/<cite[^>]*>([\\s\\S]{0,300}?)<\\/cite>/gi",
+    "h2Tag": "/<h2[^>]*>([\\s\\S]*?)<\\/h2>/i",
+    "bingHrefPattern": "/href=\"([^\"]*bing\\.com\\/ck[^\"]*|[^\"]*\\/ck\\/a[^\"]*)\"/gi",
+    "linkedinInPattern": "/^(?:(?:www|[a-z]{2})\\.)?linkedin\\.com\\s*[›>\\/\\s]\\s*in\\s*[›>\\/\\s]\\s*([^\\s›>\\/]+)/i",
+    "linkedinPostsPattern": "/^(?:(?:www|[a-z]{2})\\.)?linkedin\\.com\\s*[›>\\/\\s]\\s*posts\\s*[›>\\/\\s]\\s*([^_\\s›>\\/]+)/i",
     "cardIndicator": "s_appgobig",
     "contextCharsBeforeCite": 1500,
     "contextCharsAfterCite": 600,
@@ -112,18 +117,12 @@
   },
   "twitter.com": {
     "full_name": {
-      "selector": "[data-testid='UserName'] span",
+      "selector": "div[data-testid='UserName'] span, div[data-testid='User-Name'] > div > div > a > div > div > span > span",
       "transform": "innerText"
     },
     "pic_url": {
       "selector": "a[href$='/photo'] img",
       "transform": "src"
-    }
-  },
-  "x.com": {
-    "full_name": {
-      "selector": "div[data-testid='User-Name'] > div > div > a > div > div > span > span",
-      "transform": "innerText"
     }
   }
 }
