@@ -60,7 +60,7 @@
   "bing-linkedin-search": {
     "citeTag": "/<cite[^>]*>([\\s\\S]{0,300}?)<\\/cite>/gi",
     "h2Tag": "/<h2[^>]*>([\\s\\S]*?)<\\/h2>/i",
-    "bingHrefPattern": "/href=\"([^\"]*bing\\.com\\/ck[^\"]*|[^\"]*\\/ck\\/a[^\"]*)\"/gi",
+    "bingHrefPattern": "/href=\"([^\"]*bing\\.com\\/ck[^\"]*|[^\"]*\\/ck\\/a[^\"]*|https?:\\/\\/(?:www\\.)?linkedin\\.com\\/(?:in|pub|posts)\\/[^\"]+)\"/gi",
     "linkedinInPattern": "/^(?:(?:www|[a-z]{2})\\.)?linkedin\\.com\\s*[›>\\/\\s]\\s*in\\s*[›>\\/\\s]\\s*([^\\s›>\\/]+)/i",
     "linkedinPostsPattern": "/^(?:(?:www|[a-z]{2})\\.)?linkedin\\.com\\s*[›>\\/\\s]\\s*posts\\s*[›>\\/\\s]\\s*([^_\\s›>\\/]+)/i",
     "cardIndicator": "s_appgobig",
