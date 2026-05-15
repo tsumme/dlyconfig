@@ -1,5 +1,5 @@
 {
-  "version": "1.1.6",
+  "version": "1.1.7",
   "linkedin.com": {
     "container": {
       "selector": "main.scaffold-layout__main, main, #root"
@@ -91,13 +91,21 @@
       ]
     },
     "pic_url": {
-      "selector": "a svg g image",
+      "selector": "svg[role='img'][aria-label] image, svg[aria-label] image, a svg g image",
       "transform": "xlink:href",
       "fallbacks": [
+        { "selector": "svg[role='img'][aria-label] image", "transform": "xlink:href" },
+        { "selector": "svg[role='img'][aria-label] image", "transform": "href" },
+        { "selector": "svg[aria-label] image", "transform": "xlink:href" },
+        { "selector": "svg[aria-label] image", "transform": "href" },
         { "selector": "svg[aria-label] g image", "transform": "xlink:href" },
         { "selector": "svg[aria-label] g image", "transform": "href" },
+        { "selector": "a[aria-label] svg image", "transform": "xlink:href" },
+        { "selector": "a[aria-label] svg image", "transform": "href" },
         { "selector": "a[aria-label] svg g image", "transform": "xlink:href" },
         { "selector": "a[aria-label] svg g image", "transform": "href" },
+        { "selector": "a svg image", "transform": "xlink:href" },
+        { "selector": "a svg image", "transform": "href" },
         { "selector": "a svg g image", "transform": "xlink:href" },
         { "selector": "a svg g image", "transform": "href" }
       ]
