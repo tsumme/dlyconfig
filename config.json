@@ -1,27 +1,27 @@
 {
-  "version": "1.1.5",
+  "version": "1.1.6",
   "linkedin.com": {
     "container": {
       "selector": "main.scaffold-layout__main, main, #root"
     },
     "full_name": {
-      "selector": "section:has(a[href*='contact-info']) h1, section:has(a[href*='contact-info']) h2, h1",
+      "selector": "section:has(a[href*='contact-info']) h1, section:has(a[href*='contact-info']) h2, div:has(a[href*='/overlay/contact-info/']) h1, div:has(a[href*='/overlay/contact-info/']) h2, main h1, main h2, h1",
       "transform": "innerText"
     },
     "pic_url": {
-      "selector": "div[aria-label='Profile photo'] img, .pv-top-card-profile-picture__image--show, [data-testid='profile-photo'] img",
+      "selector": "div[aria-label='Profile photo'] img, .pv-top-card-profile-picture__image--show, [data-testid='profile-photo'] img, img[alt*='profile'], img[class*='profile-picture'], img[class*='presence-entity__image']",
       "transform": "src"
     },
     "location": {
-      "selector": "div:has(> p > a[href*='contact-info']) > p:first-of-type, [data-view-name='profile-top-card-location']",
+      "selector": "div:has(> p > a[href*='contact-info']) > p:first-of-type, div:has(a[href*='/overlay/contact-info/']) > p:first-of-type, [data-view-name='profile-top-card-location']",
       "transform": "innerText"
     },
     "titles": {
-      "selector": ".text-body-medium.break-words, div:has(> div[aria-haspopup='dialog']) + p",
+      "selector": ".text-body-medium.break-words, div:has(> div[aria-haspopup='dialog']) + p, div:has(a[href*='/overlay/contact-info/']) h1 ~ p:first-of-type, div:has(a[href*='/overlay/contact-info/']) h2 ~ p:first-of-type",
       "transform": "innerText"
     },
     "company": {
-      "selector": "div[role='button']:has(svg[id*='company']) p, section[componentkey*='Topcard'] a[href*='/company/'] p",
+      "selector": "div[role='button']:has(svg[id*='company']) p, div[role='button']:has(svg[id*='company']) span, section[componentkey*='Topcard'] a[href*='/company/'] p",
       "transform": "innerText",
       "fallbacks": [
         "#experience ~ .pvs-list__outer-container .t-14.t-normal span[aria-hidden='true']",
@@ -32,7 +32,7 @@
       ]
     },
     "university": {
-      "selector": "div[role='button']:has(svg[id*='school']) p, section[componentkey*='Topcard'] a[href*='/school/'] p",
+      "selector": "div[role='button']:has(svg[id*='school']) p, div[role='button']:has(svg[id*='school']) span, section[componentkey*='Topcard'] a[href*='/school/'] p",
       "transform": "innerText",
       "fallbacks": [
         "#education ~ .pvs-list__outer-container .mr1.hoverable-link-text span[aria-hidden='true']",
