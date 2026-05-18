@@ -1,11 +1,11 @@
 {
-  "version": "1.1.7",
+  "version": "1.1.8",
   "linkedin.com": {
     "container": {
       "selector": "main.scaffold-layout__main, main, #root"
     },
     "full_name": {
-      "selector": "section:has(a[href*='contact-info']) h1, section:has(a[href*='contact-info']) h2, div:has(a[href*='/overlay/contact-info/']) h1, div:has(a[href*='/overlay/contact-info/']) h2, main h1, main h2, h1",
+      "selector": "main a[href^='https://www.linkedin.com/in/'] h1, main a[href^='https://www.linkedin.com/in/'] h2, main a[href^='/in/'] h1, main a[href^='/in/'] h2, section:has(a[href*='contact-info']) h1, section:has(a[href*='contact-info']) h2, div:has(a[href*='/overlay/contact-info/']) h1, div:has(a[href*='/overlay/contact-info/']) h2",
       "transform": "innerText"
     },
     "pic_url": {
