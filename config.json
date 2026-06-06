@@ -1,5 +1,5 @@
 {
-  "version": "1.1.9",
+  "version": "1.1.10",
   "linkedin.com": {
     "container": {
       "selector": "main.scaffold-layout__main, main, #root"
@@ -67,6 +67,75 @@
     "contextCharsBeforeCite": 1500,
     "contextCharsAfterCite": 600,
     "maxResults": 5
+  },
+  "linkedin-background-search": {
+    "version": "default-v1",
+    "peopleMarkers": [
+      "SearchResultsPeople",
+      "data-sdui-screen=\"com.linkedin.sdui.flagshipnav.search.SearchResultsPeople\"",
+      "SearchResults_FirstResult_people"
+    ],
+    "resultBlockStartPattern": "/<(?:li|div)\\b[^>]*(?:componentkey=[\"']SearchResults_[^\"']*people[^\"']*[\"']|role=[\"']listitem[\"'])[^>]*>/gi",
+    "componentKeyPeoplePattern": "/componentkey=[\"']SearchResults_[^\"']*people/i",
+    "profileLinkPatterns": [
+      {
+        "regex": "/href=[\"']([^\"']+)[\"']/gi",
+        "source": "href"
+      },
+      {
+        "regex": "/\"(?:url|navigationUrl|targetUrl)\"\\s*:\\s*\"([^\"]+)\"/gi",
+        "source": "json_url"
+      },
+      {
+        "regex": "/(https?:\\\\/\\\\/(?:www\\.)?linkedin\\.com\\\\/in\\\\/[a-z0-9%\\-_.~\\\\/?#=&]+)/gi",
+        "source": "escaped_url"
+      },
+      {
+        "regex": "/(https?:\\/\\/(?:www\\.)?linkedin\\.com\\/in\\/[a-z0-9%\\-_.~/?#=&]+)/gi",
+        "source": "absolute_url"
+      },
+      {
+        "regex": "/(\\/in\\/[a-z0-9%\\-_.~]+(?:[/?#][^\"'<>\\s]*)?)/gi",
+        "source": "relative_url"
+      }
+    ],
+    "ignoredLinkedInUrlPatterns": [
+      "/\\/pub\\/dir\\//i",
+      "/\\/search\\/results\\/people/i",
+      "/\\/feed\\/update/i",
+      "/\\/posts\\//i"
+    ],
+    "authBlockedStatusCodes": [429, 999],
+    "authBlockedUrlMarkers": [
+      "/checkpoint",
+      "/challenge",
+      "/uas/login",
+      "/login"
+    ],
+    "authLoggedOutUrlMarkers": [
+      "authwall"
+    ],
+    "authLoggedOutPagePatterns": [
+      "/name=[\"']pagekey[\"'][^>]*content=[\"']authwall[\"']/i",
+      "/<title>\\s*linkedin login/i",
+      "/<title>\\s*sign in/i"
+    ],
+    "authLoggedOutPageMarkers": [
+      "sign in to view"
+    ],
+    "authBlockedPageMarkers": [
+      "captcha",
+      "checkpoint",
+      "challenge"
+    ],
+    "degreePattern": "/(?:^|\\s|•)(1st|2nd|3rd\\+?|3rd)(?:\\s|$)/i",
+    "currentPattern": "/Current:\\s*([\\s\\S]*?)(?=\\s+(?:Past:|Message|Connect|Follow|$))/i",
+    "geographyPattern": "/([A-Z][A-Za-z .'-]+,\\s*[A-Z][A-Za-z .'-]+,\\s*(?:United States|Canada|United Kingdom|Australia|India))/",
+    "nameAnchorPattern": "/<a[^>]+href=[\"'](?:https:\\/\\/www\\.linkedin\\.com)?\\/in\\/[^\"']+[\"'][^>]*>([\\s\\S]*?)<\\/a>/i",
+    "maxResultsCap": 5,
+    "maxBlockSpanChars": 25000,
+    "maxBlockCount": 200,
+    "fallbackWindowChars": 2500
   },
   "mail.google.com": {
     "dom": {
