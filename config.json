@@ -1,5 +1,5 @@
 {
-  "version": "1.1.10",
+  "version": "1.1.11",
   "linkedin.com": {
     "container": {
       "selector": "main.scaffold-layout__main, main, #root"
@@ -42,12 +42,28 @@
     },
     "idUser": {
       "selector": "[data-member-id]",
-      "transform": "data-member-id"
+      "transform": "data-member-id",
+      "required": false,
+      "reportMissing": false
     },
     "multipleCompany": {
       "selectorSpan": "[data-testid*='ExperienceTopLevelSection'] ul li > span, #experience + div + div ul li:nth-of-type(1) ul li > span",
       "selector": "a[href*='/company/'] p:first-of-type, li a[href*='/company/'] p",
       "transform": "innerText"
+    },
+    "routing": {
+      "allowedPathPatterns": [
+        "^/in/[^/]+"
+      ],
+      "blockedPathPatterns": [
+        "^/feed",
+        "^/search/results",
+        "^/company/[^/]+/admin",
+        "^/mynetwork",
+        "^/jobs",
+        "^/messaging",
+        "^/notifications"
+      ]
     }
   },
   "linkedin-search": {
@@ -151,12 +167,40 @@
     }
   },
   "facebook.com": {
+    "routing": {
+      "blockedPathPatterns": [
+        "^/checkpoint",
+        "^/content/insights",
+        "^/login",
+        "^/recover",
+        "^/settings",
+        "^/groups",
+        "^/watch",
+        "^/marketplace",
+        "^/business",
+        "^/ads",
+        "^/search",
+        "^/$",
+        "^/home"
+      ]
+    },
     "full_name": {
-      "selector": "div[role='main'] h1, span[dir='auto'] h1",
+      "selector": "div[role='main'] h1, div[role='main'] h1 span[dir='auto'], span[dir='auto'] h1",
       "transform": "innerText",
       "fallbacks": [
-        { "selector": "svg[role='img'][aria-label]", "transform": "aria-label" },
-        { "selector": "h1", "transform": "innerText" }
+        { "selector": "meta[property='og:title']", "transform": "content" },
+        { "selector": "svg[role='img'][aria-label]", "transform": "aria-label" }
+      ],
+      "rejectValues": [
+        "Facebook",
+        "Log in",
+        "Sign up",
+        "Checkpoint",
+        "Content insights",
+        "Home",
+        "Watch",
+        "Marketplace",
+        "Groups"
       ]
     },
     "pic_url": {
