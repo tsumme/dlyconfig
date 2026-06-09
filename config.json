@@ -159,7 +159,15 @@
     },
     "email": {
       "selector": "span[email]",
-      "transform": "email"
+      "transform": "email",
+      "nonHuman": {
+        "additionalMailboxWords": [],
+        "additionalMailboxes": [],
+        "additionalDomains": [],
+        "additionalAddresses": [],
+        "additionalLocalPartPatterns": [],
+        "additionalDisplayNameWords": []
+      }
     },
     "nameprofile": {
       "selector": ".gD",
