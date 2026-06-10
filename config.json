@@ -1,5 +1,5 @@
 {
-  "version": "1.1.11",
+  "version": "1.1.12",
   "linkedin.com": {
     "container": {
       "selector": "main.scaffold-layout__main, main, #root"
@@ -196,6 +196,8 @@
       "selector": "div[role='main'] h1, div[role='main'] h1 span[dir='auto'], span[dir='auto'] h1",
       "transform": "innerText",
       "fallbacks": [
+        { "selector": "h1.html-h1", "transform": "innerText" },
+        { "selector": "h1", "transform": "innerText" },
         { "selector": "meta[property='og:title']", "transform": "content" },
         { "selector": "svg[role='img'][aria-label]", "transform": "aria-label" }
       ],
@@ -208,7 +210,8 @@
         "Home",
         "Watch",
         "Marketplace",
-        "Groups"
+        "Groups",
+        "Search results"
       ]
     },
     "pic_url": {
@@ -242,6 +245,35 @@
       "containerSelector": "h2",
       "listItemSelector": "[role='listitem']",
       "textSelector": "span[dir='auto']"
+    },
+    "highlightedDetails": {
+      "containerSelector": "[aria-label='Highlighted details'][role='list'], span[aria-label='Highlighted details']",
+      "listItemSelector": "[role='listitem']",
+      "companyLinkSelector": "a[href*='facebook.com/']",
+      "textSelector": "span, a",
+      "blockedHrefPathPatterns": [
+        "/search",
+        "/groups",
+        "/events",
+        "/watch",
+        "/marketplace",
+        "/friends",
+        "/profile.php",
+        "/pages",
+        "/photo",
+        "/videos",
+        "/reels"
+      ],
+      "locationPattern": "^[A-Za-zÀ-ÖØ-öø-ÿ .'-]+,\\s*(?:[A-Z]{2}|[A-Za-zÀ-ÖØ-öø-ÿ ]+)(?:,\\s*[A-Za-zÀ-ÖØ-öø-ÿ .'-]+)?$",
+      "schoolKeywords": [
+        "University",
+        "College",
+        "School",
+        "Institute",
+        "Academy",
+        "State University",
+        "Community College"
+      ]
     }
   },
   "twitter.com": {
