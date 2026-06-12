@@ -1,5 +1,5 @@
 {
-  "version": "1.1.12",
+  "version": "1.1.13",
   "linkedin.com": {
     "container": {
       "selector": "main.scaffold-layout__main, main, #root"
@@ -17,7 +17,7 @@
       "transform": "innerText"
     },
     "titles": {
-      "selector": ".text-body-medium.break-words, div:has(> div[aria-haspopup='dialog']) + p, div:has(a[href*='/overlay/contact-info/']) h1 ~ p:first-of-type, div:has(a[href*='/overlay/contact-info/']) h2 ~ p:first-of-type",
+      "selector": "div:has(> div a[href*='/in/'] h2):has(> div a[href*='/overlay/contact-info/']) > p:first-of-type, div:has(a[href*='/in/'] h2):has(a[href*='/overlay/contact-info/']) > p:first-of-type, div:has(> div[aria-haspopup='dialog'] a[href*='/in/']) + p, .text-body-medium.break-words",
       "transform": "innerText"
     },
     "company": {
