@@ -17,7 +17,7 @@
       "transform": "innerText"
     },
     "titles": {
-      "selector": "div:has(> div a[href*='/in/'] h2):has(> div a[href*='/overlay/contact-info/']) > p:first-of-type, div:has(a[href*='/in/'] h2):has(a[href*='/overlay/contact-info/']) > p:first-of-type, div:has(> div[aria-haspopup='dialog'] a[href*='/in/']) + p, .text-body-medium.break-words",
+      "selector": "div:has(> div a[href*='/in/'] h2):has(> div a[href*='/overlay/contact-info/']) > p:first-of-type, div:has(a[href*='/in/'] h2):has(a[href*='/overlay/contact-info/']) > p:first-of-type, .text-body-medium.break-words",
       "transform": "innerText"
     },
     "company": {
