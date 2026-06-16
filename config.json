@@ -1,5 +1,5 @@
 {
-  "version": "1.1.13",
+  "version": "1.1.14",
   "linkedin.com": {
     "container": {
       "selector": "main.scaffold-layout__main, main, #root"
@@ -57,12 +57,16 @@
       ],
       "blockedPathPatterns": [
         "^/feed",
-        "^/search/results",
-        "^/company/[^/]+/admin",
+        "^/search",
+        "^/company",
         "^/mynetwork",
         "^/jobs",
         "^/messaging",
-        "^/notifications"
+        "^/notifications",
+        "^/404",
+        "^/home",
+        "^/learning",
+        "^/events"
       ]
     }
   },
@@ -189,7 +193,20 @@
         "^/ads",
         "^/search",
         "^/$",
-        "^/home"
+        "^/home",
+        "^/latest",
+        "^/photo\\.php",
+        "^/photos",
+        "^/posts",
+        "^/events_manager2",
+        "^/billing_hub",
+        "^/commerce",
+        "^/security",
+        "^/select",
+        "^/invitation",
+        "^/auth_platform",
+        "^/dialog",
+        "^/post/create"
       ]
     },
     "full_name": {
