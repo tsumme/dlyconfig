@@ -1,5 +1,5 @@
 {
-  "version": "1.1.14",
+  "version": "1.1.15",
   "linkedin.com": {
     "container": {
       "selector": "main.scaffold-layout__main, main, #root"
@@ -150,7 +150,7 @@
     ],
     "degreePattern": "/(?:^|\\s|•)(1st|2nd|3rd\\+?|3rd)(?:\\s|$)/i",
     "currentPattern": "/Current:\\s*([\\s\\S]*?)(?=\\s+(?:Past:|Message|Connect|Follow|$))/i",
-    "geographyPattern": "/([A-Z][A-Za-z .'-]+,\\s*[A-Z][A-Za-z .'-]+,\\s*(?:United States|Canada|United Kingdom|Australia|India))/",
+    "geographyPattern": "/\\b((?:San|Los|New|Fort|Saint|St\\.?|[A-Z][a-z]+)(?:\\s[A-Z][a-z]+){0,1},\\s*[A-Z][A-Za-z .'-]{1,40},\\s*(?:United States|Canada|United Kingdom|Australia|India))\\b/",
     "nameAnchorPattern": "/<a[^>]+href=[\"'](?:https:\\/\\/www\\.linkedin\\.com)?\\/in\\/[^\"']+[\"'][^>]*>([\\s\\S]*?)<\\/a>/i",
     "maxResultsCap": 5,
     "maxBlockSpanChars": 25000,
