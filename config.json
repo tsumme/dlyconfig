@@ -1,5 +1,5 @@
 {
-  "version": "1.1.16",
+  "version": "1.1.17",
   "linkedin.com": {
     "container": {
       "selector": "main.scaffold-layout__main, main, #root"
@@ -71,9 +71,9 @@
     }
   },
   "linkedin-search": {
-    "searchResult": "[data-view-name=\"people-search-result\"]",
+    "searchResult": "[data-view-name=\"people-search-result\"], div[componentkey*=\"SearchResults_\"][componentkey*=\"people\"], li:has(a[data-view-name=\"search-result-lockup-title\"][href*=\"/in/\"])",
     "nameLink": "a[data-view-name=\"search-result-lockup-title\"][href*=\"/in/\"]",
-    "detailedLink": "a[href*=\"/in/\"]:not([data-view-name=\"search-result-lockup-title\"]):not([data-view-name=\"search-result-social-proof-insight\"])",
+    "detailedLink": "a[href*=\"/in/\"]:not([data-view-name=\"search-result-lockup-title\"]):not([data-view-name=\"search-result-social-proof-insight\"]):not([href*=\"miniProfileUrn\"]):not([href*=\"mutual\"])",
     "paragraphs": "p",
     "companyStrong": "strong"
   },
@@ -89,13 +89,15 @@
     "maxResults": 5
   },
   "linkedin-background-search": {
-    "version": "default-v1",
+    "version": "people-row-order-v2",
     "peopleMarkers": [
       "SearchResultsPeople",
       "data-sdui-screen=\"com.linkedin.sdui.flagshipnav.search.SearchResultsPeople\"",
-      "SearchResults_FirstResult_people"
+      "SearchResults_FirstResult_people",
+      "data-view-name=\"people-search-result\"",
+      "search-result-lockup-title"
     ],
-    "resultBlockStartPattern": "/<(?:li|div)\\b[^>]*(?:componentkey=[\"']SearchResults_[^\"']*people[^\"']*[\"']|role=[\"']listitem[\"'])[^>]*>/gi",
+    "resultBlockStartPattern": "/<(?:li|div)\\b(?=[\\s\\S]{0,2500}(?:href=[\"'][^\"']*\\/in\\/|\\/in\\/))[^>]*(?:componentkey=[\"']SearchResults_[^\"']*people[^\"']*[\"']|data-view-name=[\"']people-search-result[\"']|role=[\"']listitem[\"'])[^>]*>/gi",
     "componentKeyPeoplePattern": "/componentkey=[\"']SearchResults_[^\"']*people/i",
     "profileLinkPatterns": [
       {
@@ -123,7 +125,8 @@
       "/\\/pub\\/dir\\//i",
       "/\\/search\\/results\\/people/i",
       "/\\/feed\\/update/i",
-      "/\\/posts\\//i"
+      "/\\/posts\\//i",
+      "/[?&]trk=[^\"']*(?:mutual|social)/i"
     ],
     "authBlockedStatusCodes": [429, 999],
     "authBlockedUrlMarkers": [
@@ -150,7 +153,7 @@
     ],
     "degreePattern": "/(?:^|\\s|•)(1st|2nd|3rd\\+?|3rd)(?:\\s|$)/i",
     "currentPattern": "/Current:\\s*([\\s\\S]*?)(?=\\s+(?:Past:|Message|Connect|Follow|$))/i",
-    "geographyPattern": "/([A-Z][A-Za-z .'-]+,\\s*[A-Z][A-Za-z .'-]+,\\s*(?:United States|Canada|United Kingdom|Australia|India))/",
+    "geographyPattern": "/\\b([A-Z][A-Za-z.'-]+(?:\\s+[A-Z][A-Za-z.'-]+){0,2},\\s*[A-Z][A-Za-z .'-]{2,40},\\s*(?:United States|Canada|United Kingdom|Australia|India|Netherlands|Germany|France|Ireland|New Zealand|Singapore))\\b/",
     "nameAnchorPattern": "/<a[^>]+href=[\"'](?:https:\\/\\/www\\.linkedin\\.com)?\\/in\\/[^\"']+[\"'][^>]*>([\\s\\S]*?)<\\/a>/i",
     "maxResultsCap": 5,
     "maxBlockSpanChars": 25000,
