@@ -1,11 +1,11 @@
 {
-  "version": "1.1.17",
+  "version": "1.1.18",
   "linkedin.com": {
     "container": {
       "selector": "main.scaffold-layout__main, main, #root"
     },
     "full_name": {
-      "selector": "main a[href^='https://www.linkedin.com/in/'] h1, main a[href^='https://www.linkedin.com/in/'] h2, main a[href^='/in/'] h1, main a[href^='/in/'] h2, section:has(a[href*='contact-info']) a[href*='/in/'] h1, section:has(a[href*='contact-info']) a[href*='/in/'] h2, div:has(a[href*='/overlay/contact-info/']) a[href*='/in/'] h1, div:has(a[href*='/overlay/contact-info/']) a[href*='/in/'] h2",
+      "selector": "main div:has(> div h1):has(a[href*='/overlay/contact-info/']) > div h1, main div:has(> div h2):has(a[href*='/overlay/contact-info/']) > div h2, main div:has(> h1):has(a[href*='/overlay/contact-info/']) > h1, main div:has(> h2):has(a[href*='/overlay/contact-info/']) > h2, main a[href^='https://www.linkedin.com/in/'] h1, main a[href^='https://www.linkedin.com/in/'] h2, main a[href^='/in/'] h1, main a[href^='/in/'] h2, section:has(a[href*='contact-info']) a[href*='/in/'] h1, section:has(a[href*='contact-info']) a[href*='/in/'] h2, div:has(a[href*='/overlay/contact-info/']) a[href*='/in/'] h1, div:has(a[href*='/overlay/contact-info/']) a[href*='/in/'] h2",
       "transform": "innerText"
     },
     "pic_url": {
@@ -17,7 +17,7 @@
       "transform": "innerText"
     },
     "titles": {
-      "selector": "div:has(> div a[href*='/in/'] h2):has(> div a[href*='/overlay/contact-info/']) > p:first-of-type, div:has(a[href*='/in/'] h2):has(a[href*='/overlay/contact-info/']) > p:first-of-type, .text-body-medium.break-words",
+      "selector": "main div:has(> div h1):has(a[href*='/overlay/contact-info/']) > div:has(h1) + p, main div:has(> div h2):has(a[href*='/overlay/contact-info/']) > div:has(h2) + p, main div:has(> h1):has(a[href*='/overlay/contact-info/']) > h1 + p, main div:has(> h2):has(a[href*='/overlay/contact-info/']) > h2 + p, div:has(> div a[href*='/in/'] h2):has(> div a[href*='/overlay/contact-info/']) > p:first-of-type, div:has(a[href*='/in/'] h2):has(a[href*='/overlay/contact-info/']) > p:first-of-type",
       "transform": "innerText"
     },
     "company": {
@@ -128,7 +128,10 @@
       "/\\/posts\\//i",
       "/[?&]trk=[^\"']*(?:mutual|social)/i"
     ],
-    "authBlockedStatusCodes": [429, 999],
+    "authBlockedStatusCodes": [
+      429,
+      999
+    ],
     "authBlockedUrlMarkers": [
       "/checkpoint",
       "/challenge",
@@ -216,10 +219,22 @@
       "selector": "div[role='main'] h1, div[role='main'] h1 span[dir='auto'], span[dir='auto'] h1",
       "transform": "innerText",
       "fallbacks": [
-        { "selector": "h1.html-h1", "transform": "innerText" },
-        { "selector": "h1", "transform": "innerText" },
-        { "selector": "meta[property='og:title']", "transform": "content" },
-        { "selector": "svg[role='img'][aria-label]", "transform": "aria-label" }
+        {
+          "selector": "h1.html-h1",
+          "transform": "innerText"
+        },
+        {
+          "selector": "h1",
+          "transform": "innerText"
+        },
+        {
+          "selector": "meta[property='og:title']",
+          "transform": "content"
+        },
+        {
+          "selector": "svg[role='img'][aria-label]",
+          "transform": "aria-label"
+        }
       ],
       "rejectValues": [
         "Facebook",
@@ -238,20 +253,62 @@
       "selector": "svg[role='img'][aria-label] image, svg[aria-label] image, a svg g image",
       "transform": "xlink:href",
       "fallbacks": [
-        { "selector": "svg[role='img'][aria-label] image", "transform": "xlink:href" },
-        { "selector": "svg[role='img'][aria-label] image", "transform": "href" },
-        { "selector": "svg[aria-label] image", "transform": "xlink:href" },
-        { "selector": "svg[aria-label] image", "transform": "href" },
-        { "selector": "svg[aria-label] g image", "transform": "xlink:href" },
-        { "selector": "svg[aria-label] g image", "transform": "href" },
-        { "selector": "a[aria-label] svg image", "transform": "xlink:href" },
-        { "selector": "a[aria-label] svg image", "transform": "href" },
-        { "selector": "a[aria-label] svg g image", "transform": "xlink:href" },
-        { "selector": "a[aria-label] svg g image", "transform": "href" },
-        { "selector": "a svg image", "transform": "xlink:href" },
-        { "selector": "a svg image", "transform": "href" },
-        { "selector": "a svg g image", "transform": "xlink:href" },
-        { "selector": "a svg g image", "transform": "href" }
+        {
+          "selector": "svg[role='img'][aria-label] image",
+          "transform": "xlink:href"
+        },
+        {
+          "selector": "svg[role='img'][aria-label] image",
+          "transform": "href"
+        },
+        {
+          "selector": "svg[aria-label] image",
+          "transform": "xlink:href"
+        },
+        {
+          "selector": "svg[aria-label] image",
+          "transform": "href"
+        },
+        {
+          "selector": "svg[aria-label] g image",
+          "transform": "xlink:href"
+        },
+        {
+          "selector": "svg[aria-label] g image",
+          "transform": "href"
+        },
+        {
+          "selector": "a[aria-label] svg image",
+          "transform": "xlink:href"
+        },
+        {
+          "selector": "a[aria-label] svg image",
+          "transform": "href"
+        },
+        {
+          "selector": "a[aria-label] svg g image",
+          "transform": "xlink:href"
+        },
+        {
+          "selector": "a[aria-label] svg g image",
+          "transform": "href"
+        },
+        {
+          "selector": "a svg image",
+          "transform": "xlink:href"
+        },
+        {
+          "selector": "a svg image",
+          "transform": "href"
+        },
+        {
+          "selector": "a svg g image",
+          "transform": "xlink:href"
+        },
+        {
+          "selector": "a svg g image",
+          "transform": "href"
+        }
       ]
     },
     "company": {
