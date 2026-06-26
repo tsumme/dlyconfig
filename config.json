@@ -1,11 +1,57 @@
 {
-  "version": "1.1.18",
+  "version": "1.1.19",
   "linkedin.com": {
+    "extractionMode": "top_card_ordered_v5",
+    "structuralTopCard": {
+      "enabled": true,
+      "requireOrderedFields": true,
+      "requireNameHeading": true,
+      "fieldOrder": [
+        "full_name",
+        "titles",
+        "location",
+        "contact_info"
+      ],
+      "useContactInfoBoundaryForLocation": true,
+      "preferLeafTextNodes": true,
+      "dropTitleWhenEqualsLocation": true,
+      "dropTitleWhenEqualsName": true,
+      "dropLocationContainingContactInfo": true,
+      "uiChromeRejectPatterns": [
+        "广告选项",
+        "为什么显示此广告",
+        "管理广告偏好",
+        "Ad options",
+        "Why am I seeing this ad",
+        "Manage ad preferences",
+        "Advertisement",
+        "Promoted"
+      ]
+    },
     "container": {
       "selector": "main.scaffold-layout__main, main, #root"
     },
+    "topCard": {
+      "candidateSelectors": [
+        "main section",
+        "main div[data-view-name]",
+        "main .pv-top-card",
+        "main .ph5",
+        "main .mt2",
+        "main > div",
+        "section"
+      ],
+      "headingSelector": "h1, h2, .text-heading-xlarge",
+      "contactInfoSelector": "a[href*='/overlay/contact-info/'], a[href*='contact-info']",
+      "leafTextSelector": "h1, h2, h3, p, span, div, a",
+      "actionTextPattern": "^(Message|Connect|Follow|More|Save|Pending|View in Recruiter|Contact info|Open to work|Show all|View full profile)$",
+      "degreePattern": "^·?\\s*(1st|2nd|3rd)\\s*$",
+      "connectionPattern": "^[\\d,.\\+kKmM\\s]*(connections?|followers?|mutual)\\b",
+      "titleHintPattern": "\\b(founder|co[- ]?founder|director|engineer|manager|designer|consultant|owner|partner|lead|head|president|ceo|cto|cfo|vp|product|sales|marketing|therapist|developer|analyst|architect|responsable|fondateur|associé|gestionnaire|ingénieur|directeur|chef|joaillerie|vendeur|ventes|produit|project|projec|r&d|mechanical|design|sav|pilotage)\\b|\\bchez\\b|\\bat\\b|@|\\|",
+      "locationHintPattern": "\\b(greater\\s+[a-z .-]+\\s+area)\\b|\\b(metropolitan\\s+area)\\b|\\b(united states|canada|france|china|india|poland|germany|united kingdom|australia)\\b|\\b(california|new york|texas|florida|ohio|delhi|warsaw|paris|cachan|shenzhen|guangdong|mazowieckie)\\b|\\b(île-de-france|ile-de-france|greater paris|san francisco bay area)\\b|法兰西岛|法国|巴黎|卡尚|美国|俄亥俄州|哥伦布|中国|广东|深圳|地区"
+    },
     "full_name": {
-      "selector": "main div:has(> div h1):has(a[href*='/overlay/contact-info/']) > div h1, main div:has(> div h2):has(a[href*='/overlay/contact-info/']) > div h2, main div:has(> h1):has(a[href*='/overlay/contact-info/']) > h1, main div:has(> h2):has(a[href*='/overlay/contact-info/']) > h2, main a[href^='https://www.linkedin.com/in/'] h1, main a[href^='https://www.linkedin.com/in/'] h2, main a[href^='/in/'] h1, main a[href^='/in/'] h2, section:has(a[href*='contact-info']) a[href*='/in/'] h1, section:has(a[href*='contact-info']) a[href*='/in/'] h2, div:has(a[href*='/overlay/contact-info/']) a[href*='/in/'] h1, div:has(a[href*='/overlay/contact-info/']) a[href*='/in/'] h2",
+      "selector": "main div:has(> div h1):has(a[href*='/overlay/contact-info/']) > div h1, main div:has(> div h2):has(a[href*='/overlay/contact-info/']) > div h2, main div:has(> h1):has(a[href*='/overlay/contact-info/']) > h1, main div:has(> h2):has(a[href*='/overlay/contact-info/']) > h2, main a[href^='https://www.linkedin.com/in/'] h1, main a[href^='https://www.linkedin.com/in/'] h2, main a[href^='/in/'] h1, main a[href^='/in/'] h2, section:has(a[href*='contact-info']) a[href*='/in/'] h1, section:has(a[href*='contact-info']) a[href*='/in/'] h2, div:has(a[href*='/overlay/contact-info/']) a[href*='/in/'] h1, div:has(a[href*='/overlay/contact-info/']) a[href*='/in/'] h2, main h1.text-heading-xlarge, main h2.text-heading-xlarge, main .text-heading-xlarge, main h1, main h2",
       "transform": "innerText"
     },
     "pic_url": {
@@ -13,11 +59,16 @@
       "transform": "src"
     },
     "location": {
-      "selector": "div:has(> p > a[href*='/overlay/contact-info/']) > p:first-child, div:has(> p > a[href*='contact-info']) > p:first-child, [data-view-name='profile-top-card-location']",
-      "transform": "innerText"
+      "selector": "[data-view-name='profile-top-card-location']",
+      "transform": "innerText",
+      "fallbacks": [
+        "main section:has(a[href*='/overlay/contact-info/']) [data-view-name='profile-top-card-location']",
+        "main div[data-view-name='profile-top-card-location']"
+      ],
+      "notes": "Intentionally conservative. Do not use broad p:first-child selectors here because they can return wrapper text containing Contact info. Ordered extension logic should derive location from Contact info boundary when no clean leaf node exists."
     },
     "titles": {
-      "selector": "main div:has(> div h1):has(a[href*='/overlay/contact-info/']) > div:has(h1) + p, main div:has(> div h2):has(a[href*='/overlay/contact-info/']) > div:has(h2) + p, main div:has(> h1):has(a[href*='/overlay/contact-info/']) > h1 + p, main div:has(> h2):has(a[href*='/overlay/contact-info/']) > h2 + p, div:has(> div a[href*='/in/'] h2):has(> div a[href*='/overlay/contact-info/']) > p:first-of-type, div:has(a[href*='/in/'] h2):has(a[href*='/overlay/contact-info/']) > p:first-of-type",
+      "selector": "main div:has(> div h1):has(a[href*='/overlay/contact-info/']) > div:has(h1) + p, main div:has(> div h2):has(a[href*='/overlay/contact-info/']) > div:has(h2) + p, main div:has(> h1):has(a[href*='/overlay/contact-info/']) > h1 + p, main div:has(> h2):has(a[href*='/overlay/contact-info/']) > h2 + p, div:has(> div a[href*='/in/'] h2):has(> div a[href*='/overlay/contact-info/']) > p:first-of-type, div:has(a[href*='/in/'] h2):has(a[href*='/overlay/contact-info/']) > p:first-of-type, main section h1 + p, main section h2 + p, main .text-heading-xlarge + p",
       "transform": "innerText"
     },
     "company": {
