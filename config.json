@@ -1,11 +1,11 @@
 {
-  "version": "1.1.19",
+  "version": "1.1.20",
   "linkedin.com": {
-    "extractionMode": "top_card_ordered_v5",
+    "extractionMode": "top_card_ordered_v6",
     "structuralTopCard": {
       "enabled": true,
       "requireOrderedFields": true,
-      "requireNameHeading": true,
+      "requireNameHeading": false,
       "fieldOrder": [
         "full_name",
         "titles",
@@ -25,7 +25,27 @@
         "Why am I seeing this ad",
         "Manage ad preferences",
         "Advertisement",
-        "Promoted"
+        "Promoted",
+        "Profile language",
+        "Suggested for you",
+        "Add projects that showcase your skills",
+        "Show recruiters how you put your skills to use",
+        "Add a project",
+        "Explorar perfiles Premium",
+        "Conheça perfis Premium",
+        "Explorar perfis Premium",
+        "Gente que podrías conocer",
+        "Pessoas que talvez você conheça",
+        "People you may know",
+        "Destacado",
+        "Featured",
+        "Experience",
+        "Experiencia",
+        "Experiência",
+        "About",
+        "Sobre",
+        "Activity",
+        "Education"
       ]
     },
     "container": {
@@ -33,63 +53,96 @@
     },
     "topCard": {
       "candidateSelectors": [
-        "main section",
-        "main div[data-view-name]",
+        "main [componentkey*='Topcard']",
+        "main [componentkey*='TopCard']",
+        "[componentkey*='Topcard']",
+        "[componentkey*='TopCard']",
+        "main section:has(a[href*='/overlay/contact-info/'])",
+        "main div[data-view-name]:has(a[href*='/overlay/contact-info/'])",
         "main .pv-top-card",
-        "main .ph5",
-        "main .mt2",
-        "main > div",
-        "section"
+        "main .ph5:has(a[href*='/overlay/contact-info/'])",
+        "main .mt2:has(a[href*='/overlay/contact-info/'])"
       ],
-      "headingSelector": "h1, h2, .text-heading-xlarge",
+      "headingSelector": "h1, h2, .text-heading-xlarge, [componentkey*='Topcard'] div, [componentkey*='TopCard'] div",
       "contactInfoSelector": "a[href*='/overlay/contact-info/'], a[href*='contact-info']",
       "leafTextSelector": "h1, h2, h3, p, span, div, a",
-      "actionTextPattern": "^(Message|Connect|Follow|More|Save|Pending|View in Recruiter|Contact info|Open to work|Show all|View full profile)$",
-      "degreePattern": "^·?\\s*(1st|2nd|3rd)\\s*$",
-      "connectionPattern": "^[\\d,.\\+kKmM\\s]*(connections?|followers?|mutual)\\b",
-      "titleHintPattern": "\\b(founder|co[- ]?founder|director|engineer|manager|designer|consultant|owner|partner|lead|head|president|ceo|cto|cfo|vp|product|sales|marketing|therapist|developer|analyst|architect|responsable|fondateur|associé|gestionnaire|ingénieur|directeur|chef|joaillerie|vendeur|ventes|produit|project|projec|r&d|mechanical|design|sav|pilotage)\\b|\\bchez\\b|\\bat\\b|@|\\|",
-      "locationHintPattern": "\\b(greater\\s+[a-z .-]+\\s+area)\\b|\\b(metropolitan\\s+area)\\b|\\b(united states|canada|france|china|india|poland|germany|united kingdom|australia)\\b|\\b(california|new york|texas|florida|ohio|delhi|warsaw|paris|cachan|shenzhen|guangdong|mazowieckie)\\b|\\b(île-de-france|ile-de-france|greater paris|san francisco bay area)\\b|法兰西岛|法国|巴黎|卡尚|美国|俄亥俄州|哥伦布|中国|广东|深圳|地区"
+      "actionTextPattern": "^(Message|Connect|Follow|More|Save|Pending|View in Recruiter|Contact info|Open to work|Show all|View full profile|Conectar|Enviar mensaje|Pendiente|İletişim Bilgileri)$",
+      "degreePattern": "^·?\\s*(1st|2nd|3rd\\+?|1º|2º|3º|1er|2do|3er)\\s*$",
+      "connectionPattern": "^[\\d,.\\+kKmM\\s]*(connections?|followers?|mutual|seguidores?|contactos?|takipçi|bağlantı)\\b",
+      "socialCountPattern": "(?:^|\\s)\\d[\\d,.\\+kKmM\\s]*\\s*(connections?|followers?|seguidores?|contactos?|takipçi|bağlantı)\\b",
+      "recommendationCardPattern": "(?:^|[\\s·•])(1st|2nd|3rd\\+?|1º|2º|3º|1er|2do|3er)(?:[\\s·•]|$)|\\b(Connect|Message|Conectar|Enviar mensaje|Pendiente|Pending)\\b",
+      "experienceEntryPattern": "\\b(full-time|part-time|jornada completa|tempo integral|actualidad|o momento|present|ene\\.?|feb\\.?|mar\\.?|abr\\.?|may\\.?|jun\\.?|jul\\.?|ago\\.?|sep\\.?|set\\.?|oct\\.?|nov\\.?|dic\\.?|jan\\.?|apr\\.?|aug\\.?|dec\\.?)\\b|\\b\\d+\\s+(años?|meses?|yrs?|mos?|anos?)\\b",
+      "titleHintPattern": "\\b(founder|co[- ]?founder|director|engineer|manager|designer|consultant|owner|partner|lead|head|president|chief|officer|investigator|creator|ceo|cto|cfo|cio|vp|svp|product|sales|marketing|therapist|developer|analyst|architect|venture|capitalist|responsable|fondateur|associé|gestionnaire|ingénieur|directeur|chef|joaillerie|vendeur|ventes|produit|project|projec|r&d|mechanical|design|sav|pilotage)\\b|\\bchez\\b|\\bat\\b|@|\\|",
+      "locationHintPattern": "\\b(greater\\s+[\\p{L} .-]+(?:\\s+area)?)\\b|\\b(metropolitan\\s+area)\\b|\\b(united states|canada|france|china|india|poland|germany|united kingdom|australia|türkiye|turkey|méxico|mexico|netherlands|spain|italy|brazil)\\b|\\b(california|new york|texas|florida|ohio|delhi|warsaw|paris|cachan|shenzhen|guangdong|mazowieckie|ankara|istanbul|jalisco|tamaulipas)\\b|\\b(île-de-france|ile-de-france|greater paris|san francisco bay area|bay area)\\b|法兰西岛|法国|巴黎|卡尚|美国|俄亥俄州|哥伦布|中国|广东|深圳|地区|^[\\p{L} .\\-]+,\\s*[\\p{L} .\\-]+(?:,\\s*[\\p{L} .\\-]+)?$"
     },
     "full_name": {
-      "selector": "main div:has(> div h1):has(a[href*='/overlay/contact-info/']) > div h1, main div:has(> div h2):has(a[href*='/overlay/contact-info/']) > div h2, main div:has(> h1):has(a[href*='/overlay/contact-info/']) > h1, main div:has(> h2):has(a[href*='/overlay/contact-info/']) > h2, main a[href^='https://www.linkedin.com/in/'] h1, main a[href^='https://www.linkedin.com/in/'] h2, main a[href^='/in/'] h1, main a[href^='/in/'] h2, section:has(a[href*='contact-info']) a[href*='/in/'] h1, section:has(a[href*='contact-info']) a[href*='/in/'] h2, div:has(a[href*='/overlay/contact-info/']) a[href*='/in/'] h1, div:has(a[href*='/overlay/contact-info/']) a[href*='/in/'] h2, main h1.text-heading-xlarge, main h2.text-heading-xlarge, main .text-heading-xlarge, main h1, main h2",
-      "transform": "innerText"
+      "selector": "main [componentkey*='Topcard'] h1, main [componentkey*='TopCard'] h1, main [componentkey*='Topcard'] h2, main [componentkey*='TopCard'] h2, main section:has(a[href*='/overlay/contact-info/']) h1, main section:has(a[href*='/overlay/contact-info/']) h2",
+      "transform": "innerText",
+      "rejectValues": [
+        "Profile language",
+        "Suggested for you",
+        "Explorar perfiles Premium",
+        "Conheça perfis Premium",
+        "Explorar perfis Premium",
+        "Gente que podrías conocer",
+        "Pessoas que talvez você conheça",
+        "People you may know",
+        "Destacado",
+        "Featured",
+        "Experience",
+        "Experiencia",
+        "Experiência",
+        "About",
+        "Sobre",
+        "Activity",
+        "Education"
+      ],
+      "notes": "Conservative until extension version with SDUI non-heading top-card name fallback ships. Avoid broad h1/h2 fallback outside top-card."
     },
     "pic_url": {
-      "selector": "div[aria-label='Profile photo'] img, .pv-top-card-profile-picture__image--show, [data-testid='profile-photo'] img, img[alt*='profile'], img[class*='profile-picture'], img[class*='presence-entity__image']",
+      "selector": "[componentkey*='Topcard'] div[aria-label='Profile photo'] img, [componentkey*='TopCard'] div[aria-label='Profile photo'] img, div[aria-label='Profile photo'] img, .pv-top-card-profile-picture__image--show, [data-testid='profile-photo'] img, img[alt*='profile'], img[class*='profile-picture'], img[class*='presence-entity__image'], img[class*='EntityPhoto']",
       "transform": "src"
     },
     "location": {
-      "selector": "[data-view-name='profile-top-card-location']",
+      "selector": "[componentkey*='Topcard'] [data-view-name='profile-top-card-location'], [componentkey*='TopCard'] [data-view-name='profile-top-card-location'], [data-view-name='profile-top-card-location']",
       "transform": "innerText",
       "fallbacks": [
+        "main [componentkey*='Topcard'] [data-view-name='profile-top-card-location']",
+        "main [componentkey*='TopCard'] [data-view-name='profile-top-card-location']",
         "main section:has(a[href*='/overlay/contact-info/']) [data-view-name='profile-top-card-location']",
         "main div[data-view-name='profile-top-card-location']"
       ],
-      "notes": "Intentionally conservative. Do not use broad p:first-child selectors here because they can return wrapper text containing Contact info. Ordered extension logic should derive location from Contact info boundary when no clean leaf node exists."
+      "rejectPatterns": [
+        "Contact info",
+        "Información de contacto",
+        "İletişim Bilgileri",
+        "\\b\\d+[\\d,.\\+kKmM\\s]*(connections?|followers?|seguidores?|contactos?|takipçi|bağlantı)\\b",
+        "\\b(President|Chief|Officer|Manager|Director|Engineer|Investigator|Creator)\\b"
+      ],
+      "notes": "Intentionally conservative. Do not use broad p:first-child selectors here because they can return wrapper text containing Contact info. Ordered extension logic should derive location from contact-info boundary when no clean leaf node exists."
     },
     "titles": {
-      "selector": "main div:has(> div h1):has(a[href*='/overlay/contact-info/']) > div:has(h1) + p, main div:has(> div h2):has(a[href*='/overlay/contact-info/']) > div:has(h2) + p, main div:has(> h1):has(a[href*='/overlay/contact-info/']) > h1 + p, main div:has(> h2):has(a[href*='/overlay/contact-info/']) > h2 + p, div:has(> div a[href*='/in/'] h2):has(> div a[href*='/overlay/contact-info/']) > p:first-of-type, div:has(a[href*='/in/'] h2):has(a[href*='/overlay/contact-info/']) > p:first-of-type, main section h1 + p, main section h2 + p, main .text-heading-xlarge + p",
-      "transform": "innerText"
+      "selector": "main [componentkey*='Topcard'] p, main [componentkey*='TopCard'] p, main section:has(a[href*='/overlay/contact-info/']) p",
+      "transform": "innerText",
+      "rejectPatterns": [
+        "\\b(Contact info|Información de contacto|İletişim Bilgileri)\\b",
+        "\\b\\d+[\\d,.\\+kKmM\\s]*(connections?|followers?|seguidores?|contactos?|takipçi|bağlantı)\\b",
+        "(?:^|[\\s·•])(1st|2nd|3rd\\+?|1º|2º|3º|1er|2do|3er)(?:[\\s·•]|$)",
+        "\\b(Conectar|Enviar mensaje|Pendiente|Connect|Message|Pending)\\b",
+        "\\b(Jornada completa|Tempo integral|Full-time|Part-time|actualidad|o momento|present)\\b",
+        "\\b(Add projects that showcase your skills|Show recruiters how you put your skills to use|Add a project)\\b"
+      ],
+      "notes": "Scoped to top-card only. Extension ordered logic remains authoritative."
     },
     "company": {
-      "selector": "div[role='button']:has(svg[id*='company']) p, div[role='button']:has(svg[id*='company']) span, section[componentkey*='Topcard'] a[href*='/company/'] p",
+      "selector": "[componentkey*='Topcard'] a[href*='/company/'] p, [componentkey*='TopCard'] a[href*='/company/'] p, [componentkey*='Topcard'] a[href*='/company/'] span, [componentkey*='TopCard'] a[href*='/company/'] span, div[role='button']:has(svg[id*='company']) p, div[role='button']:has(svg[id*='company']) span, section[componentkey*='Topcard'] a[href*='/company/'] p",
       "transform": "innerText",
-      "fallbacks": [
-        "#experience ~ .pvs-list__outer-container .t-14.t-normal span[aria-hidden='true']",
-        ".pv-text-details__right-panel .pv-entity__summary-info .pv-entity__secondary-title",
-        ".experience-section .pv-entity__summary-info .pv-entity__secondary-title",
-        ".pv-top-card--experience-list .pv-entity__secondary-title",
-        ".experience-item .pv-entity__secondary-title"
-      ]
+      "fallbacks": []
     },
     "university": {
-      "selector": "div[role='button']:has(svg[id*='school']) p, div[role='button']:has(svg[id*='school']) span, section[componentkey*='Topcard'] a[href*='/school/'] p",
+      "selector": "[componentkey*='Topcard'] a[href*='/school/'] p, [componentkey*='TopCard'] a[href*='/school/'] p, [componentkey*='Topcard'] a[href*='/school/'] span, [componentkey*='TopCard'] a[href*='/school/'] span, div[role='button']:has(svg[id*='school']) p, div[role='button']:has(svg[id*='school']) span, section[componentkey*='Topcard'] a[href*='/school/'] p",
       "transform": "innerText",
-      "fallbacks": [
-        "#education ~ .pvs-list__outer-container .mr1.hoverable-link-text span[aria-hidden='true']",
-        ".education-section .pv-entity__degree-name",
-        ".education-section .pv-entity__school-name"
-      ]
+      "fallbacks": []
     },
     "idUser": {
       "selector": "[data-member-id]",
@@ -104,7 +157,7 @@
     },
     "routing": {
       "allowedPathPatterns": [
-        "^/in/[^/]+"
+        "^/in/[^/]+/?$"
       ],
       "blockedPathPatterns": [
         "^/feed",
@@ -117,14 +170,18 @@
         "^/404",
         "^/home",
         "^/learning",
-        "^/events"
+        "^/events",
+        "^/in/[^/]+/details",
+        "^/in/[^/]+/recent-activity",
+        "^/in/[^/]+/overlay",
+        "^/in/[^/]+/edit"
       ]
     }
   },
   "linkedin-search": {
-    "searchResult": "[data-view-name=\"people-search-result\"], div[componentkey*=\"SearchResults_\"][componentkey*=\"people\"], li:has(a[data-view-name=\"search-result-lockup-title\"][href*=\"/in/\"])",
+    "searchResult": "[data-view-name=\"people-search-result\"], div[componentkey*=\"SearchResults_\"][componentkey*=\"people\"], li:has(a[data-view-name=\"search-result-lockup-title\"][href*=\"/in/\"]), div:has(a[data-view-name=\"search-result-lockup-title\"][href*=\"/in/\"])",
     "nameLink": "a[data-view-name=\"search-result-lockup-title\"][href*=\"/in/\"]",
-    "detailedLink": "a[href*=\"/in/\"]:not([data-view-name=\"search-result-lockup-title\"]):not([data-view-name=\"search-result-social-proof-insight\"]):not([href*=\"miniProfileUrn\"]):not([href*=\"mutual\"])",
+    "detailedLink": "a[href*=\"/in/\"]:not([data-view-name=\"search-result-lockup-title\"]):not([data-view-name=\"search-result-social-proof-insight\"]):not([href*=\"miniProfileUrn\"]):not([href*=\"/overlay/\"]):not([href*=\"/recent-activity/\"]):not([href*=\"mutual\"])",
     "paragraphs": "p",
     "companyStrong": "strong"
   },
@@ -207,7 +264,7 @@
     ],
     "degreePattern": "/(?:^|\\s|•)(1st|2nd|3rd\\+?|3rd)(?:\\s|$)/i",
     "currentPattern": "/Current:\\s*([\\s\\S]*?)(?=\\s+(?:Past:|Message|Connect|Follow|$))/i",
-    "geographyPattern": "/\\b([A-Z][A-Za-z.'-]+(?:\\s+[A-Z][A-Za-z.'-]+){0,2},\\s*[A-Z][A-Za-z .'-]{2,40},\\s*(?:United States|Canada|United Kingdom|Australia|India|Netherlands|Germany|France|Ireland|New Zealand|Singapore))\\b/",
+    "geographyPattern": "/\\b([A-Z][A-Za-z.'-]+(?:\\s+[A-Z][A-Za-z.'-]+){0,2},\\s*[A-Z][A-Za-z .'-]{2,40},\\s*(?:United States|Canada|United Kingdom|Australia|India|Netherlands|Germany|France|Ireland|New Zealand|Singapore|Spain|Italy))\\b/",
     "nameAnchorPattern": "/<a[^>]+href=[\"'](?:https:\\/\\/www\\.linkedin\\.com)?\\/in\\/[^\"']+[\"'][^>]*>([\\s\\S]*?)<\\/a>/i",
     "maxResultsCap": 5,
     "maxBlockSpanChars": 25000,
