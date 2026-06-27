@@ -1,5 +1,5 @@
 {
-  "version": "1.1.21",
+  "version": "1.1.22",
   "linkedin.com": {
     "extractionMode": "top_card_ordered_v6",
     "structuralTopCard": {
@@ -75,7 +75,25 @@
         "Providers you might be interested in",
         "Service providers you might be interested in",
         "Video Editing providers you might be interested in",
-        "Manage notifications about"
+        "Manage notifications about",
+        "Highlights",
+        "Key signals",
+        "Explore Premium profiles",
+        "Browse Premium profiles",
+        "Try Sales Navigator",
+        "Sales Navigator",
+        "Edit background image",
+        "Background image",
+        "Recent posts",
+        "No recent posts",
+        "个人简介",
+        "浏览高级档案",
+        "编辑背景图片",
+        "重点信号",
+        "近期动态",
+        "加为好友",
+        "关注",
+        "发送消息"
       ]
     },
     "container": {
@@ -96,14 +114,14 @@
       "headingSelector": "h1, h2, .text-heading-xlarge, [componentkey*='Topcard'] div, [componentkey*='TopCard'] div",
       "contactInfoSelector": "a[href*='/overlay/contact-info/'], a[href*='contact-info']",
       "leafTextSelector": "h1, h2, h3, p, span, div, a",
-      "actionTextPattern": "^(Message|Connect|Follow|More|Save|Pending|View in Recruiter|Contact info|Open to work|Show all|View full profile|Conectar|Enviar mensaje|Pendiente|İletişim Bilgileri|Request services)$",
-      "degreePattern": "^·?\\s*(1st|2nd|3rd\\+?|1º|2º|3º|1er|2do|3er)\\s*$",
+      "actionTextPattern": "^(Message|Connect|Follow|More|Save|Pending|View in Recruiter|Contact info|Open to work|Show all|View full profile|Conectar|Enviar mensaje|Pendiente|İletişim Bilgileri|Request services|加为好友|关注|发送消息)$",
+      "degreePattern": "^·?\\s*(1st|2nd|3rd\\+?|1º|2º|3º|1er|2do|3er|[123]\\s*度\\+?)\\s*$",
       "connectionPattern": "^[\\d,.\\+kKmM\\s]*(connections?|followers?|mutual|seguidores?|contactos?|takipçi|bağlantı)\\b",
       "socialCountPattern": "(?:^|\\s)\\d[\\d,.\\+kKmM\\s]*\\s*(connections?|followers?|seguidores?|contactos?|takipçi|bağlantı)\\b",
-      "recommendationCardPattern": "(?:^|[\\s·•])(1st|2nd|3rd\\+?|1º|2º|3º|1er|2do|3er)(?:[\\s·•]|$)|\\b(Connect|Message|Conectar|Enviar mensaje|Pendiente|Pending)\\b",
+      "recommendationCardPattern": "(?:^|[\\s·•])(1st|2nd|3rd\\+?|1º|2º|3º|1er|2do|3er|[123]\\s*度\\+?)(?:[\\s·•]|$)|\\b(Connect|Message|Conectar|Enviar mensaje|Pendiente|Pending|加为好友|关注|发送消息)\\b",
       "experienceEntryPattern": "\\b(full-time|part-time|jornada completa|tempo integral|actualidad|o momento|present|ene\\.?|feb\\.?|mar\\.?|abr\\.?|may\\.?|jun\\.?|jul\\.?|ago\\.?|sep\\.?|set\\.?|oct\\.?|nov\\.?|dic\\.?|jan\\.?|apr\\.?|aug\\.?|dec\\.?)\\b|\\b\\d+\\s+(años?|meses?|yrs?|mos?|anos?)\\b",
       "titleHintPattern": "\\b(founder|co[- ]?founder|director|engineer|manager|designer|consultant|owner|partner|lead|head|president|chief|officer|investigator|creator|ceo|cto|cfo|cio|vp|svp|product|sales|marketing|therapist|developer|analyst|architect|venture|capitalist|responsable|fondateur|associé|gestionnaire|ingénieur|directeur|chef|joaillerie|vendeur|ventes|produit|project|projec|r&d|mechanical|design|sav|pilotage)\\b|\\bchez\\b|\\bat\\b|@|\\|",
-      "locationHintPattern": "\\b(greater\\s+[\\p{L} .-]+(?:\\s+area)?)\\b|\\b(metropolitan\\s+area)\\b|\\b(united states|canada|france|china|india|poland|germany|united kingdom|australia|türkiye|turkey|méxico|mexico|netherlands|spain|italy|brazil|israel)\\b|\\b(california|new york|texas|florida|ohio|delhi|warsaw|paris|cachan|shenzhen|guangdong|mazowieckie|ankara|istanbul|jalisco|tamaulipas|arizona|north carolina|south carolina|pennsylvania|tel aviv)\\b|\\b(île-de-france|ile-de-france|greater paris|san francisco bay area|bay area)\\b|法兰西岛|法国|巴黎|卡尚|美国|俄亥俄州|哥伦布|中国|广东|深圳|地区|^[\\p{L} .\\-]+,\\s*[\\p{L} .\\-]+(?:,\\s*[\\p{L} .\\-]+)?$"
+      "locationHintPattern": "\\b(greater\\s+[\\p{L} .-]+(?:\\s+area)?)\\b|\\b(metropolitan\\s+area)\\b|\\b(united states|canada|france|china|india|poland|germany|united kingdom|australia|türkiye|turkey|méxico|mexico|netherlands|spain|italy|brazil|israel|romania|ukraine|moldova)\\b|\\b(california|new york|texas|florida|ohio|delhi|warsaw|paris|cachan|shenzhen|guangdong|mazowieckie|ankara|istanbul|jalisco|tamaulipas|arizona|north carolina|south carolina|pennsylvania|tel aviv|bucharest|kyiv|chisinau|chișinău)\\b|\\b(île-de-france|ile-de-france|greater paris|san francisco bay area|bay area)\\b|法兰西岛|法国|巴黎|卡尚|美国|俄亥俄州|哥伦布|中国|广东|深圳|地区|^[\\p{L} .\\-]+,\\s*[\\p{L} .\\-]+(?:,\\s*[\\p{L} .\\-]+)?$"
     },
     "full_name": {
       "selector": "main [componentkey*='Topcard'] h1, main [componentkey*='TopCard'] h1, main [componentkey*='Topcard'] h2, main [componentkey*='TopCard'] h2, main section:has(a[href*='/overlay/contact-info/']) h1, main section:has(a[href*='/overlay/contact-info/']) h2",
@@ -155,9 +173,27 @@
         "Providers you might be interested in",
         "Service providers you might be interested in",
         "Video Editing providers you might be interested in",
-        "Manage notifications about"
+        "Manage notifications about",
+        "Highlights",
+        "Key signals",
+        "Explore Premium profiles",
+        "Browse Premium profiles",
+        "Try Sales Navigator",
+        "Sales Navigator",
+        "Edit background image",
+        "Background image",
+        "Recent posts",
+        "No recent posts",
+        "个人简介",
+        "浏览高级档案",
+        "编辑背景图片",
+        "重点信号",
+        "近期动态",
+        "加为好友",
+        "关注",
+        "发送消息"
       ],
-      "notes": "Conservative until extension version with trusted top-card provenance gate ships. Avoid broad h1/h2 fallback outside top-card."
+      "notes": "Conservative until extension version with hard trusted top-card provenance gate ships. Avoid broad h1/h2 fallback outside top-card."
     },
     "pic_url": {
       "selector": "[componentkey*='Topcard'] div[aria-label='Profile photo'] img, [componentkey*='TopCard'] div[aria-label='Profile photo'] img, div[aria-label='Profile photo'] img, .pv-top-card-profile-picture__image--show, [data-testid='profile-photo'] img, img[alt*='profile'], img[class*='profile-picture'], img[class*='EntityPhoto']",
@@ -178,7 +214,8 @@
         "İletişim Bilgileri",
         "\\b\\d+[\\d,.\\+kKmM\\s]*(connections?|followers?|seguidores?|contactos?|takipçi|bağlantı)\\b",
         "\\b(President|Chief|Officer|Manager|Director|Engineer|Investigator|Creator)\\b",
-        "^(Indeed|Oracle|Microsoft|Google|Meta|Amazon|Apple)$"
+        "^(Indeed|Oracle|Microsoft|Google|Meta|Amazon|Apple)$",
+        "^(Highlights|Key signals|Explore Premium profiles|Browse Premium profiles|Edit background image|个人简介|浏览高级档案|重点信号)$"
       ],
       "notes": "Intentionally conservative. Do not use broad p:first-child selectors; ordered extension logic should derive location from contact-info row."
     },
@@ -188,20 +225,29 @@
       "rejectPatterns": [
         "\\b(Contact info|Información de contacto|İletişim Bilgileri)\\b",
         "\\b\\d+[\\d,.\\+kKmM\\s]*(connections?|followers?|seguidores?|contactos?|takipçi|bağlantı)\\b",
-        "(?:^|[\\s·•])(1st|2nd|3rd\\+?|1º|2º|3º|1er|2do|3er)(?:[\\s·•]|$)",
-        "\\b(Conectar|Enviar mensaje|Pendiente|Connect|Message|Pending)\\b",
+        "(?:^|[\\s·•])(1st|2nd|3rd\\+?|1º|2º|3º|1er|2do|3er|[123]\\s*度\\+?)(?:[\\s·•]|$)",
+        "\\b(Conectar|Enviar mensaje|Pendiente|Connect|Message|Pending|加为好友|关注|发送消息)\\b",
         "\\b(Jornada completa|Tempo integral|Full-time|Part-time|actualidad|o momento|present)\\b",
         "\\b(Add projects that showcase your skills|Show recruiters how you put your skills to use|Add a project)\\b",
         "\\b(Request services|Show all|Services|Service providers|providers you might be interested in)\\b",
         "\\b(Video Editing providers you might be interested in)\\b",
-        "\\b(Recommendations|Received Given|Nothing to see for now)\\b"
+        "\\b(Recommendations|Received Given|Nothing to see for now)\\b",
+        "\\b(has no recent posts|Recent posts|shares will be displayed here)\\b",
+        "\\b(Try Sales Navigator|Sales Navigator|free trial|24\\/7 support|trial ends)\\b",
+        "\\b(Key signals|Highlights|Explore Premium profiles|Browse Premium profiles)\\b",
+        "·\\s*(1st|2nd|3rd\\+?|1º|2º|3º|[123]\\s*度\\+?).*\\b(Connect|Message|加为好友|关注|发送消息)\\b",
+        "(Johnny Mok|Regional Manager).*加为好友"
       ],
       "notes": "Scoped to top-card only. Extension ordered logic remains authoritative."
     },
     "company": {
       "selector": "[componentkey*='Topcard'] a[href*='/company/'] p, [componentkey*='TopCard'] a[href*='/company/'] p, [componentkey*='Topcard'] a[href*='/company/'] span, [componentkey*='TopCard'] a[href*='/company/'] span, div[role='button']:has(svg[id*='company']) p, div[role='button']:has(svg[id*='company']) span",
       "transform": "innerText",
-      "fallbacks": []
+      "fallbacks": [],
+      "rejectPatterns": [
+        "^Hi, skin$",
+        "^(Highlights|Key signals|Explore Premium profiles|Browse Premium profiles|Edit background image|个人简介|浏览高级档案|重点信号)$"
+      ]
     },
     "university": {
       "selector": "[componentkey*='Topcard'] a[href*='/school/'] p, [componentkey*='TopCard'] a[href*='/school/'] p, [componentkey*='Topcard'] a[href*='/school/'] span, [componentkey*='TopCard'] a[href*='/school/'] span, div[role='button']:has(svg[id*='school']) p, div[role='button']:has(svg[id*='school']) span",
@@ -326,9 +372,9 @@
       "checkpoint",
       "challenge"
     ],
-    "degreePattern": "/(?:^|\\s|•)(1st|2nd|3rd\\+?|3rd)(?:\\s|$)/i",
+    "degreePattern": "/(?:^|\\s|•)(1st|2nd|3rd\\+?|3rd|[123]\\s*度\\+?)(?:\\s|$)/i",
     "currentPattern": "/Current:\\s*([\\s\\S]*?)(?=\\s+(?:Past:|Message|Connect|Follow|$))/i",
-    "geographyPattern": "/\\b([A-Z][A-Za-z.'-]+(?:\\s+[A-Z][A-Za-z.'-]+){0,2},\\s*[A-Z][A-Za-z .'-]{2,40},\\s*(?:United States|Canada|United Kingdom|Australia|India|Netherlands|Germany|France|Ireland|Spain|Italy|Israel))\\b/",
+    "geographyPattern": "/\\b([A-Z][A-Za-z.'-]+(?:\\s+[A-Z][A-Za-z.'-]+){0,2},\\s*[A-Z][A-Za-z .'-]{2,40},\\s*(?:United States|Canada|United Kingdom|Australia|India|Netherlands|Germany|France|Ireland|Spain|Italy|Israel|Romania|Ukraine|Moldova))\\b/",
     "nameAnchorPattern": "/<a[^>]+href=[\"'](?:https:\\/\\/www\\.linkedin\\.com)?\\/in\\/[^\"']+[\"'][^>]*>([\\s\\S]*?)<\\/a>/i",
     "maxResultsCap": 5,
     "maxBlockSpanChars": 25000,
@@ -343,12 +389,29 @@
       "selector": "span[email]",
       "transform": "email",
       "nonHuman": {
-        "additionalMailboxWords": [],
-        "additionalMailboxes": [],
-        "additionalDomains": [],
+        "additionalMailboxWords": [
+          "campaign",
+          "training",
+          "webinar",
+          "newsletter",
+          "retirement services"
+        ],
+        "additionalMailboxes": [
+          "noreplies"
+        ],
+        "additionalDomains": [
+          "campaign.simplivlearning.com",
+          "retirement.adprsportal.com"
+        ],
         "additionalAddresses": [],
-        "additionalLocalPartPatterns": [],
-        "additionalDisplayNameWords": []
+        "additionalLocalPartPatterns": [
+          "^norepl",
+          "^no-repl"
+        ],
+        "additionalDisplayNameWords": [
+          "Copilot for Analyst",
+          "ADP Retirement Services"
+        ]
       }
     },
     "nameprofile": {
