@@ -1,5 +1,5 @@
 {
-  "version": "1.1.23",
+  "version": "1.1.24",
   "linkedin.com": {
     "extractionMode": "top_card_ordered_v6",
     "structuralTopCard": {
@@ -148,9 +148,9 @@
       "degreePattern": "^·?\\s*(1st|2nd|3rd\\+?|1º|2º|3º|1er|2do|3er|[123]\\s*度\\+?)\\s*$",
       "connectionPattern": "^[\\d,.\\+kKmM\\s]*(connections?|followers?|mutual|seguidores?|contactos?|takipçi|bağlantı)\\b",
       "socialCountPattern": "(?:^|\\s)\\d[\\d,.\\+kKmM\\s]*\\s*(connections?|followers?|seguidores?|contactos?|takipçi|bağlantı)\\b",
-      "recommendationCardPattern": "(?:^|[\\s·•])(1st|2nd|3rd\\+?|1º|2º|3º|1er|2do|3er|[123]\\s*度\\+?)(?:[\\s·•]|$)|\\b(Connect|Message|Conectar|Enviar mensaje|Pendiente|Pending|加为好友|加為好友|关注|關注|发送消息|發送消息)\\b",
+      "recommendationCardPattern": "(?:^|[\\s·•])(1st|2nd|3rd\\+?|1º|2º|3º|1er|2do|3er|[123]\\s*度\\+?)(?:[\\s·•]|$).*?\\b(Connect|Message|Conectar|Enviar mensaje|Pending|Pendiente|加为好友|加為好友|关注|關注|发送消息|發送消息)\\b|\\b(Connect|Message|Conectar|Enviar mensaje|Pending|Pendiente|加为好友|加為好友|关注|關注|发送消息|發送消息)\\b",
       "experienceEntryPattern": "\\b(full-time|part-time|jornada completa|tempo integral|actualidad|o momento|present|ene\\.?|feb\\.?|mar\\.?|abr\\.?|may\\.?|jun\\.?|jul\\.?|ago\\.?|sep\\.?|set\\.?|oct\\.?|nov\\.?|dic\\.?|jan\\.?|apr\\.?|aug\\.?|dec\\.?)\\b|\\b\\d+\\s+(años?|meses?|yrs?|mos?|anos?)\\b",
-      "titleHintPattern": "\\b(founder|co[- ]?founder|director|engineer|manager|designer|consultant|owner|partner|lead|head|president|chief|officer|investigator|creator|ceo|cto|cfo|cio|vp|svp|product|sales|marketing|therapist|developer|analyst|architect|venture|capitalist|responsable|fondateur|associé|gestionnaire|ingénieur|directeur|chef|joaillerie|vendeur|ventes|produit|project|projec|r&d|mechanical|design|sav|pilotage|recruiter|specialist|assistant|coordinator)\\b|\\bchez\\b|\\bat\\b|@|\\|",
+      "titleHintPattern": "\\b(founder|co[- ]?founder|director|engineer|manager|designer|consultant|owner|partner|lead|head|president|chief|officer|investigator|creator|ceo|cto|cfo|cio|vp|svp|product|sales|marketing|therapist|developer|analyst|architect|venture|capitalist|responsable|fondateur|associé|gestionnaire|ingénieur|directeur|chef|joaillerie|vendeur|ventes|produit|project|projec|r&d|mechanical|design|sav|pilotage|recruiter|specialist|assistant|coordinator|staff)\\b|\\bchez\\b|\\bat\\b|@|\\|",
       "locationHintPattern": "\\b(greater\\s+[\\p{L} .-]+(?:\\s+area)?)\\b|\\b(metropolitan\\s+area)\\b|\\b(united states|canada|france|china|india|poland|germany|united kingdom|australia|türkiye|turkey|méxico|mexico|netherlands|spain|italy|brazil|israel|romania|ukraine|moldova)\\b|\\b(california|new york|texas|florida|ohio|delhi|warsaw|paris|cachan|shenzhen|guangdong|mazowieckie|ankara|istanbul|jalisco|tamaulipas|arizona|north carolina|south carolina|pennsylvania|tel aviv|bucharest|kyiv|chisinau|chișinău)\\b|\\b(île-de-france|ile-de-france|greater paris|san francisco bay area|bay area)\\b|法兰西岛|法国|巴黎|卡尚|美国|俄亥俄州|哥伦布|中国|广东|深圳|地区|^[\\p{L} .\\-]+,\\s*[\\p{L} .\\-]+(?:,\\s*[\\p{L} .\\-]+)?$"
     },
     "full_name": {
